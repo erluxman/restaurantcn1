@@ -1,5 +1,7 @@
 
 /* /Users/adventure/Desktop/Restaurant Demo/css/theme.css */
+@import url("secondpage.css");
+
 #Constants {
     includeNativeBool: true; 
 }

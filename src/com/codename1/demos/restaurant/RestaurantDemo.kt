@@ -30,11 +30,12 @@ open class RestaurantDemo {
 
     fun start() {
         if (current != null) {
-            current!!.show()
+            current?.show()
             return
         }
         val hi = Form("Hi World", BoxLayout.y())
         hi.add(Label("Hi World","SplashLabel"))
+        hi.add(Label("Hi World","SplashLabelMini"))
         hi.show()
     }
 
