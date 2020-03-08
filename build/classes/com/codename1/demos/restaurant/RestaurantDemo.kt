@@ -34,7 +34,7 @@ open class RestaurantDemo {
             return
         }
         val hi = Form("Hi World", BoxLayout.y())
-        hi.add(Label("Hi World","SplashLabel"))
+        hi.add(Label("Hi World"))
         hi.show()
     }
 

@@ -1,0 +1,12 @@
+
+/* /Users/adventure/Desktop/Restaurant Demo/css/theme.css */
+#Constants {
+    includeNativeBool: true; 
+}
+SplashLabel {
+        color: white;
+        font-size: 22pt;
+        margin-top: 50px;
+        font-weight: bold;
+}
+/* End /Users/adventure/Desktop/Restaurant Demo/css/theme.css */
