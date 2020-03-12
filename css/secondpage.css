@@ -1,0 +1,9 @@
+#Constants {
+    includeNativeBool: true;
+}
+SplashLabelMini1 {
+        color: white;
+        font-size: 14pt;
+        text-align: center;
+}
+

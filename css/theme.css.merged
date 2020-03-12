@@ -1,0 +1,304 @@
+
+/* /Users/adventure/Desktop/Restaurant Demo/css/theme.css */
+@import url("secondpage.css");
+
+#Constants {
+    includeNativeBool: true; 
+}
+@font-face {
+    font-family: "fira";
+    src: url(fonts/Bellota.ttf);
+}
+SplashScreen {
+        background-image: url("background.png");
+        cn1-source-dpi: 250;
+}
+
+Label{
+        font-family: "fira";
+}
+
+Logo {
+        background-image: url("logo.png");
+        cn1-source-dpi: 250;
+}
+Logo {
+        background-image:
+        url("images/background.png"),
+        url("images/coffee.png"),
+        url("images/contactus.png"),
+        url("images/findus.png"),
+        url("images/address.png"),
+        url("images/foodmenu.png"),
+        url("images/kattiroll.png"),
+        url("images/logo.png"),
+        url("images/map.png"),
+        url("images/mobile.png"),
+        url("images/momo.png"),
+        url("images/pizza.png"),
+        url("images/weareopen.png"),
+        url("images/reservation.png"),
+        url("images/salad.png"),
+        url("images/sausage.png"),
+        url("images/seafood.png"),
+        url("images/thakali1.png"),
+        url("images/thakali2.png");
+}
+
+FoodMenu {
+        background-image: url("foodmenu.png");
+        cn1-source-dpi: 250;
+}
+
+ContactUs {
+        background-image: url("contactus.png");
+        cn1-source-dpi: 250;
+}
+
+FindUs {
+        background-image: url("findus.png");
+        cn1-source-dpi: 250;
+}
+
+Reservation {
+        background-image: url("reservation.png");
+        cn1-source-dpi: 250;
+}
+
+BookScreen {
+        background-image: url("background.png");
+        cn1-source-dpi: 150;
+        background-color:black;
+}
+
+MenuScreen1 {
+        background-color: black;
+        color: black;
+}
+
+BookScreenGoBack {
+        color: white;
+        text-align: center;
+}
+
+SplashButton {
+        background-color: #CB433A;
+        background-repeat: space;
+        color: white;
+        padding: 2mm;
+        text-align: center;
+        border-radius: 50px;
+        margin: 0px 100px 150px 100px;
+        font-family: "fira";
+
+}
+
+SplashLabel {
+        color: white;
+        font-size: 22pt;
+        margin-top: 50px;
+        font-weight: bold;
+}
+
+SplashLabelMini {
+        color: white;
+        font-size: 14pt;
+        text-align: center;
+}
+
+SplashLabelMedium {
+        color: white;
+        font-size: 18pt;
+        text-align: center;
+        margin: 50px 100px 150px 100px;
+}
+
+PickerLabel {
+        color: white;
+        font-size: 9pt;
+        text-align: left;
+        font-weight: bold;
+        margin: 10px;
+}
+
+WhiteIcon {
+        color: white;
+        margin: 50px 100px 150px 100px;
+}
+
+MenuToolbar1 {
+        margin: 20px;
+}
+
+MenuToolbar1 {
+        background-color:black;
+        margin: 20px;
+}
+
+MenuTileLabel{
+        color: white;
+        font-size: 9pt;
+        margin: 20px;
+        text-align: center;
+
+}
+MenuTile{
+        margin: 96px;
+}
+
+MenuCard{
+        margin : 10px;
+        padding :10px;
+        border:4px grey;
+        border-style : dashed;
+        border-bottom-left-radius: 70px;
+        margin-top: 100px;
+        margin-right : 100px;
+        margin-left : 50px;
+}
+MenuCardItemTitle{
+        color: #ff5555;
+        font-size: 10pt;
+        margin-top:40px;
+}
+
+MenuCardImage{
+        margin-top:15px;
+}
+MenuCardItemDescription{
+        color: #cccccc;
+        font-size: 7pt;
+        font-family:"fira"
+}
+
+MenuCardPrice{
+       background: cn1-round-border;
+       color: white;
+       font-size: 8pt;
+       background: #338833;
+       text-align:center;
+       padding:2mm;
+       margin-top:30px;
+}
+
+Wrapper {
+        min-height: 100vh;
+}
+
+Badge {
+        min-width: 16px; /* pixel unit */
+        padding: 35px 20px; /* pixel unit */
+        border-radius: 50%;
+        font-size: 75px;
+        text-align: center;
+        background: #338833;
+        color: #fefefe;
+}
+MenuCardItemImage{
+        height:200px;
+        width:200px;
+}
+
+FoodInfo{
+        padding-right: 370px;
+}
+
+
+
+
+/*Styles for  Food details Page*/
+
+FoodDetailsTitle{
+        color: red;
+        font-size: 20pt;
+        text-align: center;
+}
+
+FoodDetailsDescription{
+        color: white;
+        font-size: 10pt;
+        text-align: center;
+}
+
+GreenLine{
+        height: 3px;
+        width: 140px;
+        color: #339933;
+        background-color: #339933;
+}
+
+ItemPrice{
+       background: cn1-round-border;
+       color: white;
+       font-size: 10pt;
+       background: #338833;
+       margin-left : 5mm;
+       margin-right : 5mm;
+       text-align:center;
+       padding:2mm;
+       margin-top:30px;
+}
+
+
+ItemDetailsInfo{
+        border-style: dashed;
+        border: 4px grey;
+        border-color: grey;
+        border-radius :10px;
+        padding: 20px;
+        padding-top: 20mm;
+        margin :20px;
+        margin-top: 10mm;
+}
+
+GoBackButton {
+        background-color: #CB433A;
+        background-repeat: space;
+        color: white;
+        padding: 2mm;
+        text-align: center;
+        border-radius: 50px;
+        margin: 200px 100px 150px 100px;
+}
+
+
+/*Contact Us Page*/
+
+ItemTitle{
+        color: #ff5555;
+        font-size: 16pt;
+        text-align: center;
+        margin-top: 5mm;
+}
+
+ShcheduleRowText{
+        color: #eeeeee;
+        font-size: 8pt;
+        text-align: left;
+}
+
+ShcheduleRowDashText{
+        color: #eeeeee;
+        font-size: 8pt;
+        text-align: center;
+}
+
+/*Find Us page*/
+AddressCard{
+        background:#cccccc;
+
+}
+
+RedIcon {
+        color: #aa3333;
+}
+
+PhoneCard {
+        margin-left: 50px;
+}
+
+NormalWhiteText{
+        color: #666666;
+        font-size: 6pt;
+}
+/* End /Users/adventure/Desktop/Restaurant Demo/css/theme.css */
