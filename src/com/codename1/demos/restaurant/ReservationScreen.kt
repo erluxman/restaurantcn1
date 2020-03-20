@@ -13,7 +13,6 @@ fun showBookScreen(theme: Resources) {
     form.uiid = "BookScreen"
     form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
-    val confirmReservation = Button("Book Reservation".toUpperCase(), "SplashButton")
 
     val splashScreenName = Label("Ratatouille".toUpperCase(), "SplashLabel")
     val splashScreenDescription = Label("Cucina Italiana".toUpperCase(), "SplashLabelMini")
@@ -35,7 +34,7 @@ fun showBookScreen(theme: Resources) {
     datePicker.uiid ="DropdownStyle"
     timePicker.uiid="DropdownStyle"
     timePicker.uiid="DropdownStyle"
-    timePicker.style.fgColor = 0xff000
+    timePicker.style.fgColor = 0xfffff
     val pickers = Container(BoxLayout.y())
             .add(selectDateLabel)
             .add(datePicker)
@@ -55,7 +54,9 @@ fun showBookScreen(theme: Resources) {
     wholeScreen.add(BorderLayout.CENTER, contents)
     //wholeScreen.add(SOUTH, confirmReservation)
 
-    confirmReservation.addActionListener {
+    val confirmReservation = getDecoratedButton("Book Reservation".toUpperCase(),theme)
+    confirmReservation.uiid = "RedPillButton"
+    confirmReservation.setOnClickListener {
         showMenuScreen(theme)
     }
 

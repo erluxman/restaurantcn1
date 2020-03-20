@@ -14,9 +14,17 @@
     src: url(fonts/Airborne.ttf);
 }
 
-:root {
-  --styled-text: "airborne";
+@font-face {
+    font-family: "sen";
+    src: url(fonts/Sen.ttf);
 }
+
+:root {
+   --styled-text: "airborne";
+   --normal-text: "sen";
+ }
+
+
 SplashScreen {
         background-image: url("images/background.png");
         cn1-source-dpi: 0;
@@ -24,7 +32,8 @@ SplashScreen {
 }
 
 Label{
-        font-family: var(--styled-text);
+        font-family: var(--normal-text);
+        font-size: 10pt;
 }
 
 Logo {
@@ -274,14 +283,6 @@ NormalWhiteText{
         font-size: 6pt;
 }
 
-/*Order screen*/
-
-DropdownStyle{
-        background-color: #333333;
-        color: #FFFFFF;
-
-}
-
 /*Splash Screen*/
 SplashButton {
         background-color: #CB433A;
@@ -294,27 +295,25 @@ SplashButton {
         font-family: var(--styled-text);
 }
 
-WhiteText{
-        color: white;
-        font-size: 12pt;
-        font-weight: bold;
-}
 SplashLabel {
         color: white;
         font-size: 22pt;
         margin-top: 15mm;
         font-weight: bold;
+        font-family: var(--styled-text);
 }
 
 SplashLabelMini {
         color: white;
         font-size: 14pt;
+        font-family: var(--styled-text);
         text-align: center;
 }
 
 SplashLabelMedium {
         color: white;
         font-size: 18pt;
+        font-family: var(--styled-text);
         text-align: center;
         margin: 50px 100px 150px 100px;
 }
@@ -335,4 +334,28 @@ PickerLabel {
         font-weight: bold;
         margin: 10px;
 }
+
+DropdownStyle{
+        background-color: #333333;
+        color: #FFFFFF;
+}
+
+/*Shared Styles*/
+RedPillButton {
+        background-color: #CB433A;
+        background-repeat: space;
+        color: white;
+        padding: 1mm;
+        text-align: center;
+        border: 0pt #3399ff cn1-pill-border;
+        margin: 0px 100px 150px 100px;
+        font-family: var(--styled-text);
+}
+
+PillButtonText{
+        color: white;
+        font-size: 10pt;
+        font-weight: bold;
+}
+
 /* End /Users/adventure/Desktop/Restaurant Demo/css/theme.css */

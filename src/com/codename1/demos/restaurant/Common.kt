@@ -89,7 +89,7 @@ fun Container.setOnClickListener(listener: () -> Any) {
     this.leadComponent = button
 }
 
-fun getDecoratedButton(text: String, theme: Resources, textStyle: String = "WhiteText"): Container {
+fun getDecoratedButton(text: String, theme: Resources, textStyle: String = "PillButtonText"): Container {
     val decoratedBookTableButton = Container(BoxLayout.xCenter())
     val decRight = ScaleImageLabel(theme.getImage("border_decoration.png").scaledHeight(36))
     val decLeft = ScaleImageLabel(theme.getImage("border_decoration.png").scaledHeight(36))

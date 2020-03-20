@@ -26,7 +26,7 @@ fun showSplashScreen(theme: Resources) {
     val contents = Container(BoxLayout.yCenter())
     contents.add(container)
     val decoratedBookTableButton = getDecoratedButton("Book A table".toUpperCase(), theme)
-    decoratedBookTableButton.uiid = "SplashButton"
+    decoratedBookTableButton.uiid = "RedPillButton"
     decoratedBookTableButton.setOnClickListener {
         contents.setShouldCalcPreferredSize(true)
         contents.layout = BoxLayout.y()
