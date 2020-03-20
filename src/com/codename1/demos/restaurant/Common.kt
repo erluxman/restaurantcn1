@@ -1,5 +1,6 @@
 package com.codename1.demos.restaurant
 
+import com.codename1.components.ScaleImageLabel
 import com.codename1.ui.*
 import com.codename1.ui.layouts.BorderLayout
 import com.codename1.ui.layouts.BoxLayout
@@ -80,4 +81,23 @@ fun getToolbar(left: Component, center: Component, right: Component): Container 
     toolbar.add(CN.EAST, right)
     toolbar.add(CN.CENTER, center)
     return toolbar
+}
+
+fun Container.setOnClickListener(listener: () -> Any) {
+    val button = Button()
+    button.addActionListener { listener() }
+    this.leadComponent = button
+}
+
+fun getDecoratedButton(text: String, theme: Resources, textStyle: String = "WhiteText"): Container {
+    val decoratedBookTableButton = Container(BoxLayout.xCenter())
+    val decRight = ScaleImageLabel(theme.getImage("border_decoration.png").scaledHeight(36))
+    val decLeft = ScaleImageLabel(theme.getImage("border_decoration.png").scaledHeight(36))
+    val bookTableButton = Label(text.toUpperCase())
+    bookTableButton.uiid = textStyle
+    decoratedBookTableButton
+            .add(decLeft)
+            .add(bookTableButton)
+            .add(decRight)
+    return decoratedBookTableButton
 }

@@ -1,6 +1,9 @@
 package com.codename1.demos.restaurant
 
-import com.codename1.ui.*
+import com.codename1.ui.CN
+import com.codename1.ui.Container
+import com.codename1.ui.Form
+import com.codename1.ui.Label
 import com.codename1.ui.animations.CommonTransitions
 import com.codename1.ui.layouts.BorderLayout
 import com.codename1.ui.layouts.BoxLayout
@@ -9,7 +12,7 @@ import com.codename1.ui.util.Resources
 fun showSplashScreen(theme: Resources) {
     val form = Form(BorderLayout())
     form.uiid = "SplashScreen"
-    val bookTableButton = Button("Book A table", "SplashButton")
+    form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
 
     val splashTexts = Container(BoxLayout.yCenter())
@@ -22,18 +25,19 @@ fun showSplashScreen(theme: Resources) {
 
     val contents = Container(BoxLayout.yCenter())
     contents.add(container)
-
-
-    val wholeScreen = Container(BorderLayout())
-    wholeScreen.add(BorderLayout.CENTER, contents)
-    wholeScreen.add(BorderLayout.SOUTH, bookTableButton)
-
-    bookTableButton.addActionListener {
+    val decoratedBookTableButton = getDecoratedButton("Book A table".toUpperCase(), theme)
+    decoratedBookTableButton.uiid = "SplashButton"
+    decoratedBookTableButton.setOnClickListener {
         contents.setShouldCalcPreferredSize(true)
         contents.layout = BoxLayout.y()
         contents.animateLayoutAndWait(500)
         showBookScreen(theme)
     }
+
+    val wholeScreen = Container(BorderLayout())
+    wholeScreen.add(BorderLayout.CENTER, contents)
+    wholeScreen.add(BorderLayout.SOUTH, decoratedBookTableButton)
+
     form.add(BorderLayout.CENTER, wholeScreen)
     form.show()
 }

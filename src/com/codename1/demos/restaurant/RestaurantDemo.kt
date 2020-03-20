@@ -14,14 +14,13 @@ open class RestaurantDemo {
     private var current: Form? = null
     private var theme: Resources? = null
     fun init(context: Any?) {
-        CN.updateNetworkThreadCount(2)
+        updateNetworkThreadCount(2)
         theme = UIManager.initFirstTheme("/theme")
 
         Toolbar.setGlobalToolbar(true)
 
         Log.bindCrashProtection(true)
         addNetworkErrorListener { err: NetworkEvent ->
-
             err.consume()
             if (err.error != null) {
                 Log.e(err.error)

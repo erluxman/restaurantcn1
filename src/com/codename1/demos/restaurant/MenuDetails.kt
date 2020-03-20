@@ -14,6 +14,7 @@ fun showMenuDetails(theme: Resources, item: RestaurantMenuItem) {
     val form = Form(BorderLayout())
     form.transitionOutAnimator = CommonTransitions.createFade(800)
     form.uiid = "MenuScreen1"
+    form.toolbar.hideToolbar()
     val backButton = Button();
     val backArrowIcon = FontImage
             .createMaterial(FontImage.MATERIAL_ARROW_BACK, "WhiteIcon", 6f)
@@ -52,7 +53,6 @@ fun getMenuDetails(theme: Resources, item: RestaurantMenuItem): Container {
     val priceRow = Container(BoxLayout.xCenter())
     val greenLine = Container()
     greenLine.uiid = "GreenLine"
-    greenLine.add(Label("       ","GreenLineText"))
     val greenLine1 = Container()
     greenLine1.uiid = "GreenLine"
     greenLine1.add(Label("       ","GreenLineText"))

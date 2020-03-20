@@ -4,14 +4,16 @@ import com.codename1.ui.*
 import com.codename1.ui.animations.CommonTransitions
 import com.codename1.ui.layouts.BorderLayout
 import com.codename1.ui.layouts.BoxLayout
+import com.codename1.ui.plaf.Style
 import com.codename1.ui.util.Resources
 import java.util.*
 
 fun showBookScreen(theme: Resources) {
     val form = Form(BorderLayout())
     form.uiid = "BookScreen"
-    val confirmReservation = Button("Book Reservation".toUpperCase(), "SplashButton")
+    form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
+    val confirmReservation = Button("Book Reservation".toUpperCase(), "SplashButton")
 
     val splashScreenName = Label("Ratatouille".toUpperCase(), "SplashLabel")
     val splashScreenDescription = Label("Cucina Italiana".toUpperCase(), "SplashLabelMini")
@@ -21,22 +23,33 @@ fun showBookScreen(theme: Resources) {
     val container: Container = Container(BorderLayout())
             .add(CN.NORTH, orderScreenTitle)
 
-    val bookATable = Label("Book A Table".toUpperCase(), "SplashLabelMedium")
+    val bookATable = Label("Book A Table".toUpperCase(), "PickerTitle")
     val selectDateLabel = Label("Select Date".toUpperCase(), "PickerLabel")
     val datePicker = PickerComponent.createDate(Date())
     val selectTimeLabel = Label("Select Time".toUpperCase(), "PickerLabel")
     val timePicker = PickerComponent.createTime(0)
     val selectPartySizeLabel = Label("Party Size".toUpperCase(), "PickerLabel")
-    val partySize = ComboBox<String>("0-5 persons", "5-10 persons", "10-50 persons", "50+ persons")
     val contents = Container(BoxLayout.y())
-    contents.add(container)
-            .add(bookATable)
+
+    val partySizePicker = PickerComponent.createStrings("0-5 persons", "5-10 persons", "10-50 persons", "50+ persons")
+    datePicker.uiid ="DropdownStyle"
+    timePicker.uiid="DropdownStyle"
+    timePicker.uiid="DropdownStyle"
+    timePicker.style.fgColor = 0xff000
+    val pickers = Container(BoxLayout.y())
             .add(selectDateLabel)
             .add(datePicker)
             .add(selectTimeLabel)
             .add(timePicker)
             .add(selectPartySizeLabel)
-            .add(partySize)
+            .add(partySizePicker)
+
+    pickers.style.setPaddingUnitRight(Style.UNIT_TYPE_SCREEN_PERCENTAGE)
+    pickers.style.setPaddingRight(40f)
+
+    contents.add(container)
+            .add(bookATable)
+            .add(pickers)
 
     val wholeScreen = Container(BorderLayout())
     wholeScreen.add(BorderLayout.CENTER, contents)
@@ -53,8 +66,9 @@ fun showBookScreen(theme: Resources) {
     }
     val buttons = Container(BoxLayout.y());
     buttons.add(confirmReservation).add(goBackButton)
-    wholeScreen.add(BorderLayout.SOUTH, buttons)
+    //wholeScreen.add(BorderLayout.SOUTH, buttons)
     form.add(BorderLayout.CENTER, wholeScreen)
+    form.add(BorderLayout.SOUTH, buttons)
     // form.add(SOUTH, buttons)
     form.show()
 }
