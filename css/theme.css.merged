@@ -45,6 +45,8 @@ Logo {
         url("images/border_decoration.png"),
         url("images/border_decoration_red.png"),
         url("images/border_decoration_green.png"),
+        url("images/decorationleft.png"),
+        url("images/decorationright.png"),
         url("images/background.png"),
         url("images/coffee.png"),
         url("images/contactus.png"),
@@ -357,7 +359,7 @@ RedPillButton {
         padding: 1mm;
         text-align: center;
         border: 0pt #3399ff cn1-pill-border;
-        margin: 0px 100px 50px 100px;
+        margin: 0px 50px 50px 50px;
         font-family: var(--styled-text);
 }
 
