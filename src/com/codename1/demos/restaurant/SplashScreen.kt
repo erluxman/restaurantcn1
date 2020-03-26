@@ -16,8 +16,8 @@ fun showSplashScreen(theme: Resources) {
     form.transitionOutAnimator = CommonTransitions.createFade(800)
 
     val splashTexts = Container(BoxLayout.yCenter())
-    val splashScreenName = Label("Ratatouille".toUpperCase(), "SplashLabel")
-    val splashScreenDescription = Label("Cucina Italiana".toUpperCase(), "SplashLabelMini")
+    val splashScreenName = Label("Ratatouille".toUpperCase(), "AppTitleLabel")
+    val splashScreenDescription = Label("Cucina Italiana".toUpperCase(), "AppTitleLabelMini")
     splashTexts.add(splashScreenName).add(splashScreenDescription)
 
     val container: Container = Container(BorderLayout())

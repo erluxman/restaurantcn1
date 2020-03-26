@@ -14,8 +14,8 @@ fun showBookScreen(theme: Resources) {
     form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
 
-    val splashScreenName = Label("Ratatouille".toUpperCase(), "SplashLabel")
-    val splashScreenDescription = Label("Cucina Italiana".toUpperCase(), "SplashLabelMini")
+    val splashScreenName = Label("Ratatouille".toUpperCase(), "AppTitleLabel")
+    val splashScreenDescription = Label("Cucina Italiana".toUpperCase(), "AppTitleLabelMini")
     val orderScreenTitle = Container(BoxLayout.yCenter())
     orderScreenTitle.add(splashScreenName).add(splashScreenDescription)
 
@@ -31,10 +31,6 @@ fun showBookScreen(theme: Resources) {
     val contents = Container(BoxLayout.y())
 
     val partySizePicker = PickerComponent.createStrings("0-5 persons", "5-10 persons", "10-50 persons", "50+ persons")
-    datePicker.uiid ="DropdownStyle"
-    timePicker.uiid="DropdownStyle"
-    timePicker.uiid="DropdownStyle"
-    timePicker.style.fgColor = 0xfffff
     val pickers = Container(BoxLayout.y())
             .add(selectDateLabel)
             .add(datePicker)

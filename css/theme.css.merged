@@ -19,8 +19,13 @@
     src: url(fonts/Sen.ttf);
 }
 
+@font-face {
+    font-family: "rex";
+    src: url(fonts/Rex.ttf);
+}
+
 :root {
-   --styled-text: "airborne";
+   --styled-text: "rex";
    --normal-text: "sen";
  }
 
@@ -29,11 +34,6 @@ SplashScreen {
         background-image: url("images/background.png");
         cn1-source-dpi: 0;
         cn1-background-type: cn1-image-scaled-fill;
-}
-
-Label{
-        font-family: var(--normal-text);
-        font-size: 10pt;
 }
 
 Logo {
@@ -86,20 +86,9 @@ Reservation {
         cn1-source-dpi: 250;
 }
 
-BookScreen {
-        background-image: url("images/background.png");
-        cn1-source-dpi: 150;
-        background-color:black;
-}
-
 MenuScreen1 {
         background-color: black;
         color: black;
-}
-
-BookScreenGoBack {
-        color: white;
-        text-align: center;
 }
 
 WhiteIcon {
@@ -144,7 +133,7 @@ MenuCardItemTitle{
 }
 
 MenuCardImage{
-        margin-top:15px;
+        margin-top:0px;
 }
 MenuCardItemDescription{
         color: #cccccc;
@@ -167,8 +156,8 @@ Wrapper {
 }
 
 Badge {
-        min-width: 16px; /* pixel unit */
-        padding: 35px 20px; /* pixel unit */
+        min-width: 16px;
+        padding: 35px 20px;
         border-radius: 50%;
         font-size: 75px;
         text-align: center;
@@ -294,36 +283,20 @@ SplashButton {
         margin: 0px 100px 150px 100px;
         font-family: var(--styled-text);
 }
-
-SplashLabel {
-        color: white;
-        font-size: 22pt;
-        margin-top: 15mm;
-        font-weight: bold;
-        font-family: var(--styled-text);
-}
-
-SplashLabelMini {
-        color: white;
-        font-size: 14pt;
-        font-family: var(--styled-text);
-        text-align: center;
-}
-
-SplashLabelMedium {
-        color: white;
-        font-size: 18pt;
-        font-family: var(--styled-text);
-        text-align: center;
-        margin: 50px 100px 150px 100px;
-}
-
 /*Reservation Screen*/
+
+BookScreen {
+        background-image: url("images/reservation_bg.png");
+        cn1-source-dpi: 450;
+        cn1-background-type: cn1-image-scaled-fill;
+        background-color:black;
+}
 
 PickerTitle {
         font-size: 15pt;
         margin-top: 10mm;
         text-align: left;
+        font-family: var(--styled-text);
         color: white;
 }
 
@@ -335,11 +308,47 @@ PickerLabel {
         margin: 10px;
 }
 
-DropdownStyle{
-        background-color: #333333;
-        color: #FFFFFF;
+TextComponent{
+        background-color: rgba(0, 0, 0, 0.0);
+
+}
+TextComponentField{
+        color: white;
 }
 
+DescriptionLabel{
+        color: white;
+}
+
+DropdownStyle{
+        background-color: #333333;
+        color: white;
+}
+
+Picker {
+        background-color: black;
+        color: white;
+}
+
+Picker.selected {
+        background-color: black;
+        color: white;
+}
+Picker.pressed {
+        background-color: black;
+        color: white;
+}
+Picker.disabled {
+        background-color: black;
+        color: white;
+}
+
+BookScreenGoBack {
+        color: white;
+        text-align: center;
+        font-size:10pt;
+        font-family: var(--styled-text);
+}
 /*Shared Styles*/
 RedPillButton {
         background-color: #CB433A;
@@ -348,14 +357,42 @@ RedPillButton {
         padding: 1mm;
         text-align: center;
         border: 0pt #3399ff cn1-pill-border;
-        margin: 0px 100px 150px 100px;
+        margin: 0px 100px 50px 100px;
         font-family: var(--styled-text);
 }
 
 PillButtonText{
+        margin-top: 1mm;
         color: white;
-        font-size: 10pt;
+        font-size: 14pt;
         font-weight: bold;
+        font-family: var(--styled-text);
 }
+
+
+AppTitleLabel {
+        color: white;
+        font-size: 24pt;
+        margin-top: 15mm;
+        font-weight: bold;
+        text-align: center;
+        font-family: var(--styled-text);
+}
+
+AppTitleLabelMini {
+        color: white;
+        font-size: 16pt;
+        font-family: var(--styled-text);
+        text-align: center;
+}
+
+AppTitleLabelMedium {
+        color: white;
+        font-size: 18pt;
+        font-family: var(--styled-text);
+        text-align: center;
+        margin: 50px 100px 150px 100px;
+}
+
 
 /* End /Users/adventure/Desktop/Restaurant Demo/css/theme.css */
