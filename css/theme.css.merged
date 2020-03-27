@@ -121,9 +121,9 @@ MenuTile{
 MenuCard{
         margin : 10px;
         padding :10px;
-        border:4px grey;
-        border-style : dashed;
-        border-bottom-left-radius: 70px;
+        background-image:url("images/dashbg_landscape.png");
+        cn1-background-type: cn1-image-scaled;
+        color: white;
         margin-top: 100px;
         margin-right : 100px;
         margin-left : 50px;
@@ -213,11 +213,9 @@ ItemPrice{
 
 
 ItemDetailsInfo{
-        border-style: dashed;
-        border: 4px grey;
-        border-color: grey;
-        border-radius :10px;
-        padding: 20px;
+        padding: 0px;
+        background-image:url("images/dashbg_potrait.png");
+        cn1-background-type: cn1-image-scaled;
         padding-top: 20mm;
         margin :20px;
         margin-top: 10mm;
