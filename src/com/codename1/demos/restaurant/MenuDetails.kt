@@ -51,29 +51,15 @@ fun getMenuDetails(theme: Resources, item: RestaurantMenuItem): Container {
 
     val foodDetails = Container(BoxLayout.y());
     val priceRow = Container(BoxLayout.xCenter())
-    val greenLine = getGreenLine()
-    greenLine.uiid = "GreenLine"
-    val greenLine1 = Container()
-    greenLine1.uiid = "GreenLine"
-    greenLine1.add(Label("       ","GreenLineText"))
-    priceRow.add(greenLine).add(Label("$5","ItemPrice")).add(greenLine1)
+    val priceRowContent = Container(BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER))
+    priceRowContent.add(CENTER,Label("$5","ItemPrice"))
+    priceRowContent.add(EAST, getGreenLine())
+    priceRowContent.add(WEST, getGreenLine())
+    priceRow.add(priceRowContent)
     dashboarderContainer.add(priceRow)
     dashboarderContainer.add(SpanLabel(item.title.toUpperCase(),"FoodDetailsTitle"))
     dashboarderContainer.add(SpanLabel(item.description,"FoodDetailsDescription"))
     foodDetails.add(dashboarderContainer)
-    print("Printing new component")
-    foodDetails.add( object : Component() {
-        override fun paint(g: Graphics) { // red color
-            g.color = 0xffffff
-            // paint the screen in red
-            print("printing rectangle properties  X :$x Y:$y Width : $width Height : $height")
-            g.fillRect(x, y, width, height)
-            // draw hi world in white text at the top left corner of the screen
-            g.color = 0xffffff
-            g.drawString("Hi World", x, y)
-        }
-    })
-    foodDetails.add(Label("Namaste everywone","FoodDetailsDescription"))
     return Container(BoxLayout.y()).add(foodDetails)
 }
 

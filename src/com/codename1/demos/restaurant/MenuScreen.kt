@@ -33,22 +33,23 @@ fun getMenuCard(menuItem: RestaurantMenuItem, res: Resources): Container {
     foodInfo.add(SpanLabel(menuItem.title.toUpperCase(), "MenuCardItemTitle"))
     foodInfo.add(SpanLabel(menuItem.description, "MenuCardItemDescription"))
     menuCard.add(WEST, foodInfo)
-    if (menuItem.imageName != "") {
-        val image = Container().add(res.getImage(menuItem.imageName).scaledWidth(450))
-        image.uiid = "MenuCardImage"
-        menuCard = LayeredLayout.encloseIn(menuCard, FlowLayout.encloseRightMiddle(image))
-    }
 
     val badgeWrapper = FlowLayout.encloseIn(Label("$10", "MenuCardPrice"))
     //badgeWrapper.uiid = "Wrapper"
     menuCard = LayeredLayout.encloseIn(menuCard, badgeWrapper)
 
-    val toMenuDetails = Button();
-    toMenuDetails.addActionListener {
+
+    if (menuItem.imageName != "") {
+        val image = Container().add(res.getImage(menuItem.imageName).scaledWidth(550))
+        image.uiid = "MenuCardImage"
+        menuCard = LayeredLayout.encloseIn(menuCard, FlowLayout.encloseRightMiddle(image))
+    }
+
+
+    menuCard.setOnClickListener {
         showMenuDetails(res, menuItem)
     }
-    menuCard.leadComponent = toMenuDetails
-    return menuCard;
+    return menuCard
 }
 
 data class RestaurantMenuItem(
