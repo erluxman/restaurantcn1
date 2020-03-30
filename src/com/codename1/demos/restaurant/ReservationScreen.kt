@@ -19,9 +19,6 @@ fun showBookScreen(theme: Resources) {
     val orderScreenTitle = Container(BoxLayout.yCenter())
     orderScreenTitle.add(splashScreenName).add(splashScreenDescription)
 
-    val container: Container = Container(BorderLayout())
-            .add(CN.NORTH, orderScreenTitle)
-
     val bookATable = Label("Book A Table".toUpperCase(), "PickerTitle")
     val selectDateLabel = Label(" Date & Time".toUpperCase(), "PickerLabel")
     selectDateLabel.addLeadingIcon(FontImage.MATERIAL_CALENDAR_TODAY)
@@ -45,7 +42,7 @@ fun showBookScreen(theme: Resources) {
     pickers.style.setPaddingUnitRight(Style.UNIT_TYPE_SCREEN_PERCENTAGE)
     pickers.style.setPaddingRight(40f)
 
-    contents.add(container)
+    contents.add(orderScreenTitle)
             .add(bookATable)
             .add(pickers)
 

@@ -20,11 +20,9 @@ fun showSplashScreen(theme: Resources) {
     val splashScreenDescription = Label("Cucina Italiana".toUpperCase(), "AppTitleLabelMini")
     splashTexts.add(splashScreenName).add(splashScreenDescription)
 
-    val container: Container = Container(BorderLayout())
-            .add(CN.NORTH, splashTexts)
 
     val contents = Container(BoxLayout.yCenter())
-    contents.add(container)
+    contents.add(splashTexts)
     val decoratedBookTableButton = getDecoratedButton("Book A table".toUpperCase(), theme)
     decoratedBookTableButton.uiid = "RedPillButton"
     decoratedBookTableButton.onClick {
