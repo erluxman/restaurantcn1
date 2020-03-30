@@ -137,7 +137,7 @@ MenuCardItemTitle{
 }
 
 MenuCardImage{
-        margin-top:20mm;
+        margin-top:0mm;
 }
 MenuCardItemDescription{
         color: #cccccc;
@@ -177,9 +177,6 @@ FoodInfo{
         padding-right: 410px;
         padding-left: 30px;
 }
-
-
-
 
 /*Styles for  Food details Page*/
 
