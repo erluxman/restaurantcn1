@@ -119,8 +119,31 @@ MenuScreen {
         background-color: black;
         color: black;
 }
+
+MenuCard{
+}
+
+MenuCardTextContent{
+
+}
+
+MenuCardImage{
+
+}
+
+MenuCardTitle{
+}
+
+MenuCardDescription{
+
+}
+
+MenuCardPrice{
+
+}
 /*MenuScreen Ends */
 
+/*
 
 MenuCard{
         margin : 10px;
@@ -181,6 +204,7 @@ FoodInfo{
         padding-right: 410px;
         padding-left: 30px;
 }
+*/
 
 /*Styles for  Food details Page*/
 
