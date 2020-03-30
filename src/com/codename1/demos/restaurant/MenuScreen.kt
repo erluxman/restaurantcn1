@@ -1,10 +1,15 @@
 package com.codename1.demos.restaurant
 
 import com.codename1.components.SpanLabel
-import com.codename1.ui.*
 import com.codename1.ui.CN.*
+import com.codename1.ui.Container
+import com.codename1.ui.Form
+import com.codename1.ui.Label
 import com.codename1.ui.animations.CommonTransitions
-import com.codename1.ui.layouts.*
+import com.codename1.ui.layouts.BorderLayout
+import com.codename1.ui.layouts.BoxLayout
+import com.codename1.ui.layouts.FlowLayout
+import com.codename1.ui.layouts.LayeredLayout
 import com.codename1.ui.util.Resources
 
 fun showMenuScreen(theme: Resources) {
@@ -12,7 +17,7 @@ fun showMenuScreen(theme: Resources) {
     form.uiid = "MenuScreen"
     form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
-    form.add(NORTH, getToolbar(theme,"Menu"))
+    form.add(NORTH, getToolbar(theme, "Menu"))
     form.add(CENTER, getMenuContents(theme))
     form.show()
 }
@@ -28,19 +33,22 @@ fun getMenuContents(res: Resources): Container {
 }
 
 fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
-    val foodInfo = Container(BoxLayout.y(),"FoodInfo")
+    val menuCard = Container(BorderLayout(), "MenuCard")
+    val foodInfo = Container(BoxLayout.y(), "FoodInfo")
     val foodTitle = SpanLabel(menuItem.title.toUpperCase(), "FoodTitle")
     val foodDescription = Label(menuItem.description, "FoodDescription")
     foodInfo.add(foodTitle)
     foodInfo.add(foodDescription)
 
+    menuCard.add(WEST, foodInfo)
+
     val badgeWrapper = FlowLayout.encloseIn(Label("$10", "MenuCardPrice"))
-    //badgeWrapper.uiid = "Wrapper"
-    val foodInfoWithPrice = LayeredLayout.encloseIn(foodInfo, badgeWrapper)
-    val menuCard = Container(BorderLayout(), "MenuCard")
-    menuCard.add(WEST, foodInfoWithPrice)
-    return menuCard
+
+    val menuCardWhole = LayeredLayout.encloseIn(menuCard, badgeWrapper)
+    menuCardWhole.uiid = "MenuCardWhole"
+    return menuCardWhole
 }
+
 fun getMenuCard(menuItem: RestaurantMenuItem, res: Resources): Container {
     var menuCard = Container(BorderLayout(), "MenuCard")
     val foodInfo = Container(BoxLayout.y(), "FoodInfo")

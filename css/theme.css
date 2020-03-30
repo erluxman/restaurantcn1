@@ -119,17 +119,18 @@ MenuScreen {
 }
 
 MenuCard{
-        margin : 50px 10px;
+        margin : 50px 200px 50px 30px;
         padding :10px;
         background-image:url("images/dashbg_landscape.png");
         cn1-background-type: cn1-image-scaled;
 }
 MenuCardWhole{
-
+        padding-top : 50px;
 }
 FoodInfo{
-        padding-right: 410px;
-        padding-left: 30px;
+        margin-top: 30px;
+        padding-right: 210px;
+        padding-left: 10px;
 }
 
 MenuCardImage{
@@ -151,8 +152,8 @@ FoodDescription{
 MenuCardPrice{
        background: cn1-round-border;
        color: white;
-       font-size: 8pt;
-       background: #338833;
+       font-size: 6pt;
+       background: #0B803B;
        text-align:center;
        padding:2mm;
 }
