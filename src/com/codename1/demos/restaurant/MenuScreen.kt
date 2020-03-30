@@ -20,13 +20,27 @@ fun showMenuScreen(theme: Resources) {
 fun getMenuContents(res: Resources): Container {
     val selection = Container(BoxLayout.y())
     for (menuItem in menuList) {
-        val menuRow = getMenuCard(menuItem, res)
+        val menuRow = getMenuCardNew(menuItem, res)
         selection.addComponent(menuRow)
     }
     selection.isScrollableY = true
     return selection
 }
 
+fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
+    val foodInfo = Container(BoxLayout.y(),"FoodInfo")
+    val foodTitle = SpanLabel(menuItem.title.toUpperCase(), "FoodTitle")
+    val foodDescription = Label(menuItem.description, "FoodDescription")
+    foodInfo.add(foodTitle)
+    foodInfo.add(foodDescription)
+
+    val badgeWrapper = FlowLayout.encloseIn(Label("$10", "MenuCardPrice"))
+    //badgeWrapper.uiid = "Wrapper"
+    val foodInfoWithPrice = LayeredLayout.encloseIn(foodInfo, badgeWrapper)
+    val menuCard = Container(BorderLayout(), "MenuCard")
+    menuCard.add(WEST, foodInfoWithPrice)
+    return menuCard
+}
 fun getMenuCard(menuItem: RestaurantMenuItem, res: Resources): Container {
     var menuCard = Container(BorderLayout(), "MenuCard")
     val foodInfo = Container(BoxLayout.y(), "FoodInfo")
