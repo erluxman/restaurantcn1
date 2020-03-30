@@ -47,12 +47,16 @@ fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
     val menuCardWhole = LayeredLayout.encloseIn(menuCard, badgeWrapper)
     menuCardWhole.uiid = "MenuCardWhole"
 
+    var cardToReturn = menuCardWhole
     if (menuItem.imageName != "") {
         val image = Container().add(res.getImage(menuItem.imageName).scaledWidth(500))
         image.uiid = "MenuCardImage"
-        return LayeredLayout.encloseIn(menuCardWhole, FlowLayout.encloseRightMiddle(image))
+        cardToReturn = LayeredLayout.encloseIn(menuCardWhole, FlowLayout.encloseRightMiddle(image))
     }
-    return menuCardWhole
+    cardToReturn.onClick {
+        showMenuDetails(res, menuItem)
+    }
+    return cardToReturn
 }
 
 fun getMenuCard(menuItem: RestaurantMenuItem, res: Resources): Container {

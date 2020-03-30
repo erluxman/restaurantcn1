@@ -119,14 +119,14 @@ MenuScreen {
 }
 
 MenuCard{
-        margin : 50px 200px 50px 30px;
+        margin : 40px 200px 50px 30px;
         padding :10px;
         background-image:url("images/dashbg_landscape.png");
         cn1-background-type: cn1-image-scaled;
 }
 MenuCardWhole{
-        padding-top : 100px;
-        padding-bottom : 100px;
+        padding-top : 50px;
+        padding-bottom : 50px;
 }
 FoodInfo{
         margin-top: 50px;
