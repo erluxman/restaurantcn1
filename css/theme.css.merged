@@ -57,6 +57,7 @@ Logo {
         url("images/sausage.png"),
         url("images/seafood.png"),
         url("images/thakali1.png"),
+        url("images/dropdown.png"),
         url("images/thakali2.png");
 }
 
@@ -295,6 +296,7 @@ BookScreenContent{
 PickerTitle {
         font-size: 15pt;
         margin-top: 10mm;
+        margin-bottom: 5mm;
         text-align: left;
         font-family: var(--styled-text);
         color: white;
@@ -313,7 +315,9 @@ TextComponent{
 }
 
 TextComponentField{
-        color: white;
+        color: #aaaaaa;
+        font-family: var(--normal-text);
+        font-size: 10pt;
 }
 
 DescriptionLabel{
@@ -322,24 +326,6 @@ DescriptionLabel{
 
 DropdownStyle{
         background-color: #333333;
-        color: white;
-}
-
-Picker {
-        background-color: black;
-        color: white;
-}
-
-Picker.selected {
-        background-color: black;
-        color: white;
-}
-Picker.pressed {
-        background-color: black;
-        color: white;
-}
-Picker.disabled {
-        background-color: black;
         color: white;
 }
 

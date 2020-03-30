@@ -114,3 +114,8 @@ fun Container.wrapIntoBorders(theme: Resources,top: Boolean = true, bottom: Bool
     if (bottom) newContainer.add(bottomBorder)
     return newContainer;
 }
+
+fun Component.asDropDown(theme: Resources):Container{
+    val dropDown = theme.getImage("dropdown.png").scaledWidth(50)
+    return Container(BoxLayout.x()).add(this).add(dropDown)
+}
