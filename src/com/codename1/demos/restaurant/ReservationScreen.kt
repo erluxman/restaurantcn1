@@ -40,7 +40,7 @@ fun showBookScreen(theme: Resources) {
             .add(partySizePicker)
 
     pickers.style.setPaddingUnitRight(Style.UNIT_TYPE_SCREEN_PERCENTAGE)
-    pickers.style.setPaddingRight(40f)
+    pickers.style.setPaddingRight(50f)
 
     contents.add(container)
             .add(bookATable)
@@ -52,7 +52,7 @@ fun showBookScreen(theme: Resources) {
 
     val confirmReservation = getDecoratedButton("Book Reservation".toUpperCase(),theme)
     confirmReservation.uiid = "RedPillButton"
-    confirmReservation.setOnClickListener {
+    confirmReservation.onClick {
         showMenuScreen(theme)
     }
 

@@ -9,7 +9,7 @@ import com.codename1.ui.util.Resources
 
 fun showMenuScreen(theme: Resources) {
     val form = Form(BorderLayout())
-    form.uiid = "MenuScreen1"
+    form.uiid = "MenuScreen"
     form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
     form.add(NORTH, getToolbar(theme,"Menu"))
@@ -46,7 +46,7 @@ fun getMenuCard(menuItem: RestaurantMenuItem, res: Resources): Container {
     }
 
 
-    menuCard.setOnClickListener {
+    menuCard.onClick {
         showMenuDetails(res, menuItem)
     }
     return menuCard

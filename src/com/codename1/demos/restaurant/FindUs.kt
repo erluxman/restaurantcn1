@@ -9,7 +9,7 @@ import com.codename1.ui.util.Resources
 
 fun showFindUsScreen(theme: Resources) {
     val form = Form(BorderLayout())
-    form.uiid = "MenuScreen1"
+    form.uiid = "MenuScreen"
     form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
     form.add(CN.NORTH, getToolbar(theme, "Find Us"))

@@ -17,13 +17,13 @@ fun getToolbar(theme: Resources, titleString: String): Container {
     menu.addActionListener {
         val sheet = Sheet(null, "", "Logo")
         sheet.layout = BorderLayout()
-        sheet.uiid = "MenuScreen1"
+        sheet.uiid = "MenuScreen"
         sheet.position = CN.NORTH
         val g = GridLayout(2)
         g.isAutoFit = false
         val sheetContents = Container(BoxLayout.y())
         val titleRow = Container(BoxLayout.xCenter())
-        titleRow.uiid = "MenuToolbar1"
+        titleRow.uiid = "MenuToolbar"
         val closeIcon = FontImage
                 .createMaterial(FontImage.MATERIAL_CLOSE, "WhiteIcon", 6f)
                 .toImage()
@@ -76,14 +76,14 @@ fun getMenuItem(title: String, icon: Image, actionListener: (Resources) -> Any, 
 
 fun getToolbar(left: Component, center: Component, right: Component): Container {
     val toolbar = Container(BorderLayout())
-    toolbar.uiid = "MenuToolbar1"
+    toolbar.uiid = "MenuToolbar"
     toolbar.add(CN.WEST, left)
     toolbar.add(CN.EAST, right)
     toolbar.add(CN.CENTER, center)
     return toolbar
 }
 
-fun Container.setOnClickListener(listener: () -> Any) {
+fun Container.onClick(listener: () -> Any) {
     val button = Button()
     button.addActionListener { listener() }
     this.leadComponent = button

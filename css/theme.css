@@ -66,6 +66,11 @@ Logo {
         url("images/thakali2.png");
 }
 
+/* Toolbar Menu*/
+MenuToolbar {
+        margin-top: 30px;
+}
+
 FoodMenu {
         background-image: url("images/foodmenu.png");
         cn1-source-dpi: 250;
@@ -86,24 +91,17 @@ Reservation {
         cn1-source-dpi: 250;
 }
 
-MenuScreen1 {
-        background-color: black;
-        color: black;
-}
-
 WhiteIcon {
         color: white;
         margin: 50px 100px 150px 100px;
 }
 
-MenuToolbar1 {
-        margin: 20px;
+/*MenuScreen Starts */
+MenuScreen {
+        background-color: black;
+        color: black;
 }
-
-MenuToolbar1 {
-        background-color:black;
-        margin: 20px;
-}
+/*MenuScreen Ends */
 
 MenuTileLabel{
         color: white;
@@ -218,7 +216,7 @@ ItemDetailsInfo{
         margin-top: 15mm;
 }
 
-GoBackButton {
+FoodDetailsGoBack {
         background-color: #CB433A;
         background-repeat: space;
         color: white;
@@ -306,8 +304,8 @@ PickerLabel {
 
 TextComponent{
         background-color: rgba(0, 0, 0, 0.0);
-
 }
+
 TextComponentField{
         color: white;
 }

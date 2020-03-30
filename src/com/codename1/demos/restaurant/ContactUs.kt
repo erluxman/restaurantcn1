@@ -12,7 +12,7 @@ import com.codename1.ui.util.Resources
 
 fun showContactUsScreen(theme:Resources){
     val form = Form(BorderLayout())
-    form.uiid = "MenuScreen1"
+    form.uiid = "MenuScreen"
     form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
     form.add(NORTH, getToolbar(theme,"Contact Us"))

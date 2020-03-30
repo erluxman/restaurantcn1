@@ -34,7 +34,7 @@ open class RestaurantDemo {
             current?.show()
             return
         }
-        showSplashScreen(theme!!)
+        showMenuScreen(theme!!)
         //showCustomForm()
     }
 

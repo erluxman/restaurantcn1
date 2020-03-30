@@ -13,7 +13,7 @@ import com.codename1.ui.util.Resources
 fun showMenuDetails(theme: Resources, item: RestaurantMenuItem) {
     val form = Form(BorderLayout())
     form.transitionOutAnimator = CommonTransitions.createFade(800)
-    form.uiid = "MenuScreen1"
+    form.uiid = "MenuScreen"
     form.toolbar.hideToolbar()
     val backButton = Button();
     val backArrowIcon = FontImage
@@ -31,7 +31,7 @@ fun showMenuDetails(theme: Resources, item: RestaurantMenuItem) {
 
     var itemDetailsInfo = Container(BorderLayout()).add(CENTER,getMenuDetails(theme,item))
 
-    val goBackButton = Button("Go Back".toUpperCase(), "GoBackButton")
+    val goBackButton = Button("Go Back".toUpperCase(), "FoodDetailsGoBack")
     goBackButton.addActionListener {
         showMenuScreen(theme)
     }
