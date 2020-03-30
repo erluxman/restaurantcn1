@@ -103,9 +103,10 @@ val menuList: List<RestaurantMenuItem> = listOf(
 )
 
 fun String.ellipseString(size: Int): String {
-    if (this.length > size) {
+    val stringToProcess = this+"\n"
+    if (stringToProcess.length > size) {
         var newString = ""
-        newString = this.substring(0, size)
+        newString = stringToProcess.substring(0, size)
         newString += "..."
         return newString
     }
