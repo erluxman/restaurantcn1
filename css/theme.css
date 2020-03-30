@@ -71,6 +71,24 @@ MenuToolbar {
         margin-top: 30px;
 }
 
+MenuTitleLabel{
+        color: white;
+        font-size: 16pt;
+        margin: 30px;
+        text-align: center;
+        font-family: var(--styled-text);
+        margin-left : 100px;
+}
+
+MenuTile {
+        margin: 96px;
+}
+
+MenuTileLabel {
+        cn1-derive: MenuTitleLabel;
+        font-size: 10pt;
+}
+
 FoodMenu {
         background-image: url("images/foodmenu.png");
         cn1-source-dpi: 250;
@@ -93,7 +111,7 @@ Reservation {
 
 WhiteIcon {
         color: white;
-        margin: 50px 100px 150px 100px;
+        margin: 50px 100px 250px 100px;
 }
 
 /*MenuScreen Starts */
@@ -103,16 +121,6 @@ MenuScreen {
 }
 /*MenuScreen Ends */
 
-MenuTileLabel{
-        color: white;
-        font-size: 9pt;
-        margin: 20px;
-        text-align: center;
-
-}
-MenuTile{
-        margin: 96px;
-}
 
 MenuCard{
         margin : 10px;

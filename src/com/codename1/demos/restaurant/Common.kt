@@ -11,8 +11,9 @@ fun getToolbar(theme: Resources, titleString: String): Container {
     val hamburgerIcon = FontImage
             .createMaterial(FontImage.MATERIAL_MENU, "WhiteIcon", 6f)
             .toImage()
-    val title = Label("   $titleString".toUpperCase(), "SplashLabelMini")
+    val title = Label("   $titleString".toUpperCase(), "MenuTitleLabel")
     val logo = Container().add(theme.getImage("logo.png").scaledHeight(70))
+    logo.uiid ="LogoIcon"
     val menu = Button()
     menu.addActionListener {
         val sheet = Sheet(null, "", "Logo")
