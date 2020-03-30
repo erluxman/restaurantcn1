@@ -125,22 +125,23 @@ MenuCard{
         cn1-background-type: cn1-image-scaled;
 }
 MenuCardWhole{
-        padding-top : 50px;
+        padding-top : 100px;
+        padding-bottom : 100px;
 }
 FoodInfo{
-        margin-top: 30px;
-        padding-right: 210px;
+        margin-top: 50px;
+        padding-right: 300px;
         padding-left: 10px;
 }
 
 MenuCardImage{
+        margin-right: 0px;
 }
 
 FoodTitle{
         color: #CB433A;
         font-family: var(--styled-text);
         font-size: 12pt;
-        margin-top:40px;
 }
 
 FoodDescription{
@@ -155,7 +156,7 @@ MenuCardPrice{
        font-size: 6pt;
        background: #0B803B;
        text-align:center;
-       padding:2mm;
+       padding:1.8mm;
 }
 /*MenuScreen Ends */
 

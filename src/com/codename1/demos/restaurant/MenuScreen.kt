@@ -36,7 +36,7 @@ fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
     val menuCard = Container(BorderLayout(), "MenuCard")
     val foodInfo = Container(BoxLayout.y(), "FoodInfo")
     val foodTitle = SpanLabel(menuItem.title.toUpperCase(), "FoodTitle")
-    val foodDescription = Label(menuItem.description, "FoodDescription")
+    val foodDescription = SpanLabel(menuItem.description.ellipseString(35), "FoodDescription")
     foodInfo.add(foodTitle)
     foodInfo.add(foodDescription)
 
@@ -46,6 +46,12 @@ fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
 
     val menuCardWhole = LayeredLayout.encloseIn(menuCard, badgeWrapper)
     menuCardWhole.uiid = "MenuCardWhole"
+
+    if (menuItem.imageName != "") {
+        val image = Container().add(res.getImage(menuItem.imageName).scaledWidth(500))
+        image.uiid = "MenuCardImage"
+        return LayeredLayout.encloseIn(menuCardWhole, FlowLayout.encloseRightMiddle(image))
+    }
     return menuCardWhole
 }
 
@@ -57,7 +63,6 @@ fun getMenuCard(menuItem: RestaurantMenuItem, res: Resources): Container {
     menuCard.add(WEST, foodInfo)
 
     val badgeWrapper = FlowLayout.encloseIn(Label("$10", "MenuCardPrice"))
-    //badgeWrapper.uiid = "Wrapper"
     menuCard = LayeredLayout.encloseIn(menuCard, badgeWrapper)
 
 
@@ -93,3 +98,12 @@ val menuList: List<RestaurantMenuItem> = listOf(
         RestaurantMenuItem("Burger", "Super soft buns with crunchy patties")
 )
 
+fun String.ellipseString(size: Int): String {
+    if (this.length > size) {
+        var newString = ""
+        newString = this.substring(0, size)
+        newString += "..."
+        return newString
+    }
+    return this
+}
