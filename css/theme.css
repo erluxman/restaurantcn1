@@ -1,5 +1,3 @@
-@import url("secondpage.css");
-
 #Constants {
     includeNativeBool: true;
 }
@@ -121,25 +119,42 @@ MenuScreen {
 }
 
 MenuCard{
+        margin : 50px 10px;
+        padding :10px;
+        background-image:url("images/dashbg_landscape.png");
+        cn1-background-type: cn1-image-scaled;
 }
+MenuCardWhole{
 
-MenuCardTextContent{
-
+}
+FoodInfo{
+        padding-right: 410px;
+        padding-left: 30px;
 }
 
 MenuCardImage{
-
 }
 
-MenuCardTitle{
+FoodTitle{
+        color: #CB433A;
+        font-family: var(--styled-text);
+        font-size: 12pt;
+        margin-top:40px;
 }
 
-MenuCardDescription{
-
+FoodDescription{
+        color: #cccccc;
+        font-size: 7pt;
+        font-family: var(--normal-text);
 }
 
 MenuCardPrice{
-
+       background: cn1-round-border;
+       color: white;
+       font-size: 8pt;
+       background: #338833;
+       text-align:center;
+       padding:2mm;
 }
 /*MenuScreen Ends */
 
