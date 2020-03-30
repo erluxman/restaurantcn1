@@ -31,13 +31,14 @@ fun showMenuDetails(theme: Resources, item: RestaurantMenuItem) {
 
     var itemDetailsInfo = Container(BorderLayout()).add(CENTER,getMenuDetails(theme,item))
 
-    val goBackButton = Button("Go Back".toUpperCase(), "FoodDetailsGoBack")
-    goBackButton.addActionListener {
+    val goBackButton = getDecoratedButton("Go Back".toUpperCase(),theme)
+    goBackButton.uiid ="RedPillButtonFoodDetails"
+    goBackButton.onClick {
         showMenuScreen(theme)
     }
     itemDetailsInfo.add(SOUTH,goBackButton)
     if (item.imageName != "") {
-        val image = Container().add(theme.getImage(item.imageName).scaledWidth(450))
+        val image = Container().add(theme.getImage(item.imageName).scaledWidth(550))
         image.uiid = "MenuCardImage"
         itemDetailsInfo = LayeredLayout.encloseIn(itemDetailsInfo, FlowLayout.encloseCenter(image))
     }

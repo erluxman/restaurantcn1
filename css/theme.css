@@ -75,7 +75,6 @@ MenuTitleLabel{
         margin: 30px;
         text-align: center;
         font-family: var(--styled-text);
-        margin-left : 100px;
 }
 
 MenuTile {
@@ -160,69 +159,6 @@ MenuCardPrice{
 }
 /*MenuScreen Ends */
 
-/*
-
-MenuCard{
-        margin : 10px;
-        padding :10px;
-        background-image:url("images/dashbg_landscape.png");
-        cn1-background-type: cn1-image-scaled;
-        cn1-9patch: 5px 20px 20px 10px;
-        color: white;
-        margin-top: 100px;
-        margin-right : 100px;
-        margin-left : 50px;
-}
-MenuCardItemTitle{
-        color: #CB433A;
-        font-family: var(--styled-text);
-        font-size: 12pt;
-        margin-top:40px;
-}
-
-MenuCardImage{
-        margin-top:0mm;
-}
-MenuCardItemDescription{
-        color: #cccccc;
-        font-size: 7pt;
-        font-family: var(--normal-text);
-}
-
-MenuCardPrice{
-       background: cn1-round-border;
-       color: white;
-       font-size: 8pt;
-       background: #338833;
-       text-align:center;
-       padding:2mm;
-       margin-top:30px;
-}
-
-Wrapper {
-        min-height: 100vh;
-}
-
-Badge {
-        min-width: 16px;
-        padding: 35px 20px;
-        border-radius: 50%;
-        font-size: 75px;
-        text-align: center;
-        background: #338833;
-        color: #fefefe;
-}
-MenuCardItemImage{
-        height:200px;
-        width:200px;
-}
-
-FoodInfo{
-        padding-right: 410px;
-        padding-left: 30px;
-}
-*/
-
 /*Styles for  Food details Page*/
 
 FoodDetailsTitle{
@@ -265,7 +201,7 @@ ItemDetailsInfo{
         margin-top: 15mm;
 }
 
-FoodDetailsGoBack {
+/*FoodDetailsGoBack {
         background-color: #CB433A;
         background-repeat: space;
         color: white;
@@ -273,9 +209,18 @@ FoodDetailsGoBack {
         text-align: center;
         border-radius: 50px;
         margin: 200px 100px 150px 100px;
+}*/
+
+RedPillButtonFoodDetails {
+        background-color: #CB433A;
+        background-repeat: space;
+        color: white;
+        padding: 1mm;
+        text-align: center;
+        border: 0pt #3399ff cn1-pill-border;
+        margin: 50px 150px 150px 150px;
+        font-family: var(--styled-text);
 }
-
-
 /*Contact Us Page*/
 
 ItemTitle{

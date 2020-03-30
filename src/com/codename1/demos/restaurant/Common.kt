@@ -92,8 +92,8 @@ fun Container.onClick(listener: () -> Any) {
 
 fun getDecoratedButton(text: String, theme: Resources, textStyle: String = "PillButtonText"): Container {
     val decoratedBookTableButton = Container(BoxLayout.xCenter())
-    val decRight = ScaleImageLabel(theme.getImage("decorationleft.png").scaledHeight(36))
-    val decLeft = ScaleImageLabel(theme.getImage("decorationright.png").scaledHeight(36))
+    val decRight = ScaleImageLabel(theme.getImage("decorationright.png").scaledHeight(36))
+    val decLeft = ScaleImageLabel(theme.getImage("decorationleft.png").scaledHeight(36))
     val bookTableButton = Label(text.toUpperCase())
     bookTableButton.uiid = textStyle
     decoratedBookTableButton
