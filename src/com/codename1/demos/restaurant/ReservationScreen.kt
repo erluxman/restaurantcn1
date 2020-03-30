@@ -23,11 +23,14 @@ fun showBookScreen(theme: Resources) {
             .add(CN.NORTH, orderScreenTitle)
 
     val bookATable = Label("Book A Table".toUpperCase(), "PickerTitle")
-    val selectDateLabel = Label("Date & Time".toUpperCase(), "PickerLabel")
+    val selectDateLabel = Label(" Date & Time".toUpperCase(), "PickerLabel")
+    selectDateLabel.addLeadingIcon(FontImage.MATERIAL_CALENDAR_TODAY)
     val datePicker = PickerComponent.createDateTime(Date())
-    val selectTimeLabel = Label("Select Duration".toUpperCase(), "PickerLabel")
+    val selectTimeLabel = Label(" Select Duration".toUpperCase(), "PickerLabel")
+    selectTimeLabel.addLeadingIcon(FontImage.MATERIAL_SCHEDULE)
     val timePicker = PickerComponent.createDurationHoursMinutes(1,30)
-    val selectPartySizeLabel = Label("Party Size".toUpperCase(), "PickerLabel")
+    val selectPartySizeLabel = Label(" Party Size".toUpperCase(), "PickerLabel")
+    selectPartySizeLabel.addLeadingIcon(FontImage.MATERIAL_PEOPLE)
     val contents = Container(BoxLayout.y())
 
     val partySizePicker = PickerComponent.createStrings("0-5 persons", "5-10 persons", "10-50 persons", "50+ persons")

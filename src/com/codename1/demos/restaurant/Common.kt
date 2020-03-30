@@ -105,7 +105,7 @@ fun getDecoratedButton(text: String, theme: Resources, textStyle: String = "Pill
 }
 
 
-fun Container.wrapIntoBorders(theme: Resources,top: Boolean = true, bottom: Boolean = true): Container {
+fun Container.wrapIntoBorders(theme: Resources, top: Boolean = true, bottom: Boolean = true): Container {
     val newContainer = Container(BoxLayout.y())
     val topBorder = theme.getImage("borderline.png").scaledWidth(getDisplayWidth())
     val bottomBorder = theme.getImage("borderline.png").scaledWidth(getDisplayWidth())
@@ -115,7 +115,13 @@ fun Container.wrapIntoBorders(theme: Resources,top: Boolean = true, bottom: Bool
     return newContainer;
 }
 
-fun Component.asDropDown(theme: Resources):Container{
+fun Component.asDropDown(theme: Resources): Container {
     val dropDown = theme.getImage("dropdown.png").scaledWidth(50)
     return Container(BoxLayout.x()).add(this).add(dropDown)
+}
+
+fun Label.addLeadingIcon(icon: Char) {
+    this.icon = FontImage
+            .createMaterial(icon, "WhiteIcon", 4f)
+            .toImage()
 }
