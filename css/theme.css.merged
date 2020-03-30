@@ -27,13 +27,6 @@
    --normal-text: "sen";
  }
 
-
-SplashScreen {
-        background-image: url("images/background.png");
-        cn1-source-dpi: 0;
-        cn1-background-type: cn1-image-scaled-fill;
-}
-
 Logo {
         background-image: url("images/logo.png");
         cn1-source-dpi: 250;
@@ -45,6 +38,7 @@ Logo {
         url("images/border_decoration_green.png"),
         url("images/decorationleft.png"),
         url("images/decorationright.png"),
+        url("images/borderline.png"),
         url("images/background.png"),
         url("images/coffee.png"),
         url("images/contactus.png"),
@@ -273,13 +267,25 @@ SplashButton {
         margin: 0px 100px 150px 100px;
         font-family: var(--styled-text);
 }
+
+SplashScreen {
+        background-image: url("images/background.png");
+        cn1-source-dpi: 0;
+        cn1-background-type: cn1-image-scaled-fill;
+        padding-top:100px;
+}
+
 /*Reservation Screen*/
 
 BookScreen {
         background-image: url("images/reservation_bg.png");
         cn1-source-dpi: 450;
         cn1-background-type: cn1-image-scaled-fill;
+        padding-top:100px;
         background-color:black;
+}
+
+BookScreenContent{
 }
 
 PickerTitle {

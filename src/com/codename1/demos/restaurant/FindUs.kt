@@ -2,6 +2,7 @@ package com.codename1.demos.restaurant
 
 import com.codename1.components.SpanLabel
 import com.codename1.ui.*
+import com.codename1.ui.CN.*
 import com.codename1.ui.animations.CommonTransitions
 import com.codename1.ui.layouts.BorderLayout
 import com.codename1.ui.layouts.BoxLayout
@@ -12,9 +13,9 @@ fun showFindUsScreen(theme: Resources) {
     form.uiid = "MenuScreen"
     form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
-    form.add(CN.NORTH, getToolbar(theme, "Find Us"))
-    form.add(CN.CENTER, getFindUsScreenBody(theme))
-    form.add(CN.SOUTH, getNavigateButton(theme))
+    form.add(NORTH, getToolbar(theme, "Find Us").wrapIntoBorders(theme,top = false))
+    form.add(CENTER, getFindUsScreenBody(theme))
+    form.add(SOUTH, getNavigateButton(theme).wrapIntoBorders(theme,top = false))
     form.show()
 }
 

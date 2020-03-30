@@ -17,19 +17,20 @@ fun showMenuScreen(theme: Resources) {
     form.uiid = "MenuScreen"
     form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
-    form.add(NORTH, getToolbar(theme, "Menu"))
+    form.add(NORTH, getToolbar(theme, "Menu").wrapIntoBorders(theme,top = false))
     form.add(CENTER, getMenuContents(theme))
     form.show()
 }
 
 fun getMenuContents(res: Resources): Container {
-    val selection = Container(BoxLayout.y())
+    val contents = Container(BoxLayout.y())
     for (menuItem in menuList) {
         val menuRow = getMenuCardNew(menuItem, res)
-        selection.addComponent(menuRow)
+        contents.addComponent(menuRow)
     }
-    selection.isScrollableY = true
-    return selection
+    val decoratedContents = contents.wrapIntoBorders(res,top = false)
+    decoratedContents.isScrollableY = true
+    return decoratedContents
 }
 
 fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
@@ -57,30 +58,6 @@ fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
         showMenuDetails(res, menuItem)
     }
     return cardToReturn
-}
-
-fun getMenuCard(menuItem: RestaurantMenuItem, res: Resources): Container {
-    var menuCard = Container(BorderLayout(), "MenuCard")
-    val foodInfo = Container(BoxLayout.y(), "FoodInfo")
-    foodInfo.add(SpanLabel(menuItem.title.toUpperCase(), "MenuCardItemTitle"))
-    foodInfo.add(SpanLabel(menuItem.description, "MenuCardItemDescription"))
-    menuCard.add(WEST, foodInfo)
-
-    val badgeWrapper = FlowLayout.encloseIn(Label("$10", "MenuCardPrice"))
-    menuCard = LayeredLayout.encloseIn(menuCard, badgeWrapper)
-
-
-    if (menuItem.imageName != "") {
-        val image = Container().add(res.getImage(menuItem.imageName).scaledWidth(550))
-        image.uiid = "MenuCardImage"
-        menuCard = LayeredLayout.encloseIn(menuCard, FlowLayout.encloseRightMiddle(image))
-    }
-
-
-    menuCard.onClick {
-        showMenuDetails(res, menuItem)
-    }
-    return menuCard
 }
 
 data class RestaurantMenuItem(

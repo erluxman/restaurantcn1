@@ -48,7 +48,6 @@ fun showBookScreen(theme: Resources) {
 
     val wholeScreen = Container(BorderLayout())
     wholeScreen.add(BorderLayout.CENTER, contents)
-    //wholeScreen.add(SOUTH, confirmReservation)
 
     val confirmReservation = getDecoratedButton("Book Reservation".toUpperCase(),theme)
     confirmReservation.uiid = "RedPillButton"
@@ -63,9 +62,8 @@ fun showBookScreen(theme: Resources) {
     }
     val buttons = Container(BoxLayout.y());
     buttons.add(confirmReservation).add(goBackButton)
-    //wholeScreen.add(BorderLayout.SOUTH, buttons)
     form.add(BorderLayout.CENTER, wholeScreen)
-    form.add(BorderLayout.SOUTH, buttons)
-    // form.add(SOUTH, buttons)
+    form.add(BorderLayout.NORTH, Container().wrapIntoBorders(theme,bottom = false))
+    form.add(BorderLayout.SOUTH, buttons.wrapIntoBorders(theme,top = false))
     form.show()
 }

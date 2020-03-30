@@ -2,6 +2,7 @@ package com.codename1.demos.restaurant
 
 import com.codename1.components.ScaleImageLabel
 import com.codename1.ui.*
+import com.codename1.ui.CN.getDisplayWidth
 import com.codename1.ui.layouts.BorderLayout
 import com.codename1.ui.layouts.BoxLayout
 import com.codename1.ui.layouts.GridLayout
@@ -13,7 +14,7 @@ fun getToolbar(theme: Resources, titleString: String): Container {
             .toImage()
     val title = Label("   $titleString".toUpperCase(), "MenuTitleLabel")
     val logo = Container().add(theme.getImage("logo.png").scaledHeight(70))
-    logo.uiid ="LogoIcon"
+    logo.uiid = "LogoIcon"
     val menu = Button()
     menu.addActionListener {
         val sheet = Sheet(null, "", "Logo")
@@ -101,4 +102,15 @@ fun getDecoratedButton(text: String, theme: Resources, textStyle: String = "Pill
             .add(bookTableButton)
             .add(decRight)
     return decoratedBookTableButton
+}
+
+
+fun Container.wrapIntoBorders(theme: Resources,top: Boolean = true, bottom: Boolean = true): Container {
+    val newContainer = Container(BoxLayout.y())
+    val topBorder = theme.getImage("borderline.png").scaledWidth(getDisplayWidth())
+    val bottomBorder = theme.getImage("borderline.png").scaledWidth(getDisplayWidth())
+    if (top) newContainer.add(topBorder)
+    newContainer.add(this)
+    if (bottom) newContainer.add(bottomBorder)
+    return newContainer;
 }

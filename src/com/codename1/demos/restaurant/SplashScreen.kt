@@ -38,6 +38,8 @@ fun showSplashScreen(theme: Resources) {
     wholeScreen.add(BorderLayout.CENTER, contents)
     wholeScreen.add(BorderLayout.SOUTH, decoratedBookTableButton)
 
+    form.add(BorderLayout.NORTH, Container().wrapIntoBorders(theme, bottom = false))
     form.add(BorderLayout.CENTER, wholeScreen)
+    form.add(BorderLayout.SOUTH, Container().wrapIntoBorders(theme, bottom = false))
     form.show()
 }
