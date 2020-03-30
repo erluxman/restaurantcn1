@@ -16,9 +16,10 @@ fun showBookScreen(theme: Resources) {
 
     val splashScreenName = Label("Ratatouille".toUpperCase(), "AppTitleLabel")
     val splashScreenDescription = Label("Cucina Italiana".toUpperCase(), "AppTitleLabelMini")
-    val orderScreenTitle = Container(BoxLayout.yCenter())
-    orderScreenTitle.add(splashScreenName).add(splashScreenDescription)
-
+    //val orderScreenTitle = Container(BoxLayout.yCenter())
+    //orderScreenTitle.add(splashScreenName).add(splashScreenDescription)
+    val orderScreenTitle = Container(BoxLayout.xCenter()).add(theme.getImage("logofull.png").scaledWidth(850))
+    orderScreenTitle.uiid ="AppFullLogo"
     val bookATable = Label("Book A Table".toUpperCase(), "PickerTitle")
     val selectDateLabel = Label(" Date & Time".toUpperCase(), "PickerLabel")
     selectDateLabel.addLeadingIcon(FontImage.MATERIAL_CALENDAR_TODAY)

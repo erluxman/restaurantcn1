@@ -45,6 +45,7 @@ Logo {
         url("images/foodmenu.png"),
         url("images/kattiroll.png"),
         url("images/logo.png"),
+        url("images/logofull.png"),
         url("images/map.png"),
         url("images/mobile.png"),
         url("images/momo.png"),
@@ -362,6 +363,11 @@ AppTitleLabel {
         text-align: center;
         font-family: var(--styled-text);
 }
+
+AppFullLogo {
+        margin-top: 15mm;
+}
+
 
 AppTitleLabelMini {
         color: white;
