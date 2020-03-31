@@ -40,7 +40,6 @@ fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
     val foodDescription = SpanLabel(menuItem.description.ellipseString(35), "FoodDescription")
     foodInfo.add(foodTitle)
     foodInfo.add(foodDescription)
-
     menuCard.add(WEST, foodInfo)
 
     val badgeWrapper = FlowLayout.encloseIn(Label("$10", "MenuCardPrice"))
@@ -50,7 +49,7 @@ fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
 
     var cardToReturn = menuCardWhole
     if (menuItem.imageName != "") {
-        val image = Container().add(res.getImage(menuItem.imageName).scaledWidth(500))
+        val image = Container().add(res.getImage(menuItem.imageName).scaledHeight(500))
         image.uiid = "MenuCardImage"
         cardToReturn = LayeredLayout.encloseIn(menuCardWhole, FlowLayout.encloseRightMiddle(image))
     }
@@ -71,11 +70,7 @@ val menuList: List<RestaurantMenuItem> = listOf(
         RestaurantMenuItem("Sea Food", "Delicious Fish with Tomato sauce very red hot. This is the best sea food in Nepal I would love to be in this next party lorem ipsum ", "seafood.png"),
         RestaurantMenuItem("Momo", "Delicious Pork Momo with Tomato sauce very red hot", "coffee.png"),
         RestaurantMenuItem("Thakali Food", "Best thakali food in the town", "sausage.png"),
-        RestaurantMenuItem("Sausage", "Chicken sausage, made natually at himalayas' yaks intestine","salad.png"),
-        RestaurantMenuItem("Cappuccino", "Milk, Ethiopian Coffee with himalaya yak milk","kattiroll.png"),
-        RestaurantMenuItem("Cappuccino", "Milk, Ethiopian Coffee with himalaya yak milk"),
-        RestaurantMenuItem("Burger", "Super soft buns with crunchy patties"),
-        RestaurantMenuItem("Burger", "Super soft buns with crunchy patties")
+        RestaurantMenuItem("Sausage", "Chicken sausage, made natually at himalayas' yaks intestine","salad.png")
 )
 
 fun String.ellipseString(size: Int): String {
