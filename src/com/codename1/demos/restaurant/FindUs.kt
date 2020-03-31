@@ -37,9 +37,9 @@ private fun getAddressCard(theme: Resources): Container {
 
     val shopIcon = theme.getImage("address.png")
     val address = Container(BoxLayout.y())
-            .add(Label("Ratatouille", "NormalWhiteText"))
-            .add(Label("55 3rd Street", "NormalWhiteText"))
-            .add(Label("Ny Ny 6666", "NormalWhiteText"))
+            .add(Label("Ratatouille", "AddressCardText"))
+            .add(Label("55 3rd Street", "AddressCardText"))
+            .add(Label("Ny Ny 6666", "AddressCardText"))
     container.add(shopIcon).add(address)
     return container
 }
@@ -50,7 +50,7 @@ private fun getPhoneCard(): Container {
     val phoneIcon = FontImage
             .createMaterial(FontImage.MATERIAL_PHONE, "RedIcon", 6f)
             .toImage()
-    container.add(phoneIcon).add(SpanLabel("+1-800-323-3233", "NormalWhiteText"))
+    container.add(phoneIcon).add(SpanLabel("+1-800-323-3233", "AddressCardText"))
     return container;
 }
 
@@ -61,6 +61,7 @@ fun getMapImage(theme: Resources):Container{
 
 fun getNavigateButton(theme: Resources): Container {
     val container = Container(BoxLayout.y())
-    val bookTableButton = Button("Navigate".toUpperCase(), "SplashButton")
+    val bookTableButton = getDecoratedButton("Navigate",theme)
+    bookTableButton.uiid ="FindUsPillButton"
     return container.add(bookTableButton)
 }

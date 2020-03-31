@@ -67,7 +67,7 @@ MenuToolbar {
 
 MenuTitleLabel{
         color: white;
-        font-size: 16pt;
+        font-size: 14pt;
         margin-top: 30px;
         margin-left:30px;
         text-align: center;
@@ -201,16 +201,6 @@ ItemDetailsInfo{
         margin-top: 15mm;
 }
 
-/*FoodDetailsGoBack {
-        background-color: #CB433A;
-        background-repeat: space;
-        color: white;
-        padding: 2mm;
-        text-align: center;
-        border-radius: 50px;
-        margin: 200px 100px 150px 100px;
-}*/
-
 RedPillButtonFoodDetails {
         background-color: #CB433A;
         background-repeat: space;
@@ -228,18 +218,22 @@ ItemTitle{
         font-size: 16pt;
         text-align: center;
         margin-top: 5mm;
+        font-family: var(--styled-text);
 }
 
 ShcheduleRowText{
-        color: #eeeeee;
+        color: #cccccc;
         font-size: 8pt;
         text-align: left;
+        font-family: var(--normal-text);
+
 }
 
 ShcheduleRowDashText{
-        color: #eeeeee;
+        color: #cccccc;
         font-size: 8pt;
         text-align: center;
+        font-family: var(--normal-text);
 }
 
 /*Find Us page*/
@@ -255,9 +249,20 @@ PhoneCard {
         margin-left: 50px;
 }
 
-NormalWhiteText{
+AddressCardText{
         color: #666666;
+        font-family: var(--normal-text);
         font-size: 6pt;
+}
+
+FindUsPillButton {
+        background-color: #CB433A;
+        background-repeat: space;
+        color: white;
+        text-align: center;
+        margin: 1mm 10mm;
+        border: 0pt #3399ff cn1-pill-border;
+        font-family: var(--styled-text);
 }
 
 /*Splash Screen*/
