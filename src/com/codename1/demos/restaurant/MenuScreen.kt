@@ -67,13 +67,12 @@ data class RestaurantMenuItem(
 )
 
 val menuList: List<RestaurantMenuItem> = listOf(
-        RestaurantMenuItem("Margherata", "Amazing pizza chicken ", "pizza.png"),
         RestaurantMenuItem("Pizza Margherata", "Amazing pizza chicken pieces with tanduri ", "pizza.png"),
         RestaurantMenuItem("Sea Food", "Delicious Fish with Tomato sauce very red hot. This is the best sea food in Nepal I would love to be in this next party lorem ipsum ", "seafood.png"),
-        RestaurantMenuItem("Momo", "Delicious Pork Momo with Tomato sauce very red hot", "momo.png"),
-        RestaurantMenuItem("Thakali Food", "Best thakali food in the town", "thakali1.png"),
-        RestaurantMenuItem("Sausage", "Chicken sausage, made natually at himalayas' yaks intestine"),
-        RestaurantMenuItem("Cappuccino", "Milk, Ethiopian Coffee with himalaya yak milk"),
+        RestaurantMenuItem("Momo", "Delicious Pork Momo with Tomato sauce very red hot", "coffee.png"),
+        RestaurantMenuItem("Thakali Food", "Best thakali food in the town", "sausage.png"),
+        RestaurantMenuItem("Sausage", "Chicken sausage, made natually at himalayas' yaks intestine","salad.png"),
+        RestaurantMenuItem("Cappuccino", "Milk, Ethiopian Coffee with himalaya yak milk","kattiroll.png"),
         RestaurantMenuItem("Cappuccino", "Milk, Ethiopian Coffee with himalaya yak milk"),
         RestaurantMenuItem("Burger", "Super soft buns with crunchy patties"),
         RestaurantMenuItem("Burger", "Super soft buns with crunchy patties")
