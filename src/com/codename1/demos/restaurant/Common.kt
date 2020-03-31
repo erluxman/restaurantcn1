@@ -54,7 +54,7 @@ fun getToolbar(theme: Resources, titleString: String): Container {
         actionBar.add(CN.CENTER, titleRow)
         actionBar.add(CN.EAST, Label("            "))
         sheet.add(CN.NORTH, actionBar)
-        sheet.add(CN.CENTER, sheetContents)
+        sheet.add(CN.CENTER, sheetContents.wrapIntoBorders(theme,top = false))
         sheet.show()
 
     }
