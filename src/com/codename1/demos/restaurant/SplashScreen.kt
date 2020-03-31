@@ -2,7 +2,6 @@ package com.codename1.demos.restaurant
 
 import com.codename1.ui.Container
 import com.codename1.ui.Form
-import com.codename1.ui.Label
 import com.codename1.ui.animations.CommonTransitions
 import com.codename1.ui.layouts.BorderLayout
 import com.codename1.ui.layouts.BoxLayout
@@ -14,15 +13,11 @@ fun showSplashScreen(theme: Resources) {
     form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
 
-//    val splashTexts = Container(BoxLayout.yCenter())
-//    val splashScreenName = Label("Ratatouille".toUpperCase(), "AppTitleLabel")
-//    val splashScreenDescription = Label("Cucina Italiana".toUpperCase(), "AppTitleLabelMini")
-//
-    //splashTexts.add(splashScreenName).add(splashScreenDescription)
-    val splashTexts = Container(BoxLayout.xCenter()).add(theme.getImage("logofull.png").scaledWidth(850))
-    splashTexts.uiid ="AppFullLogo"
+    val fullLogo = Container(BoxLayout.xCenter()).add(theme.getImage("logofull.png")
+            .scaledWidth(900))
+    fullLogo.uiid ="AppFullLogo"
     val contents = Container(BoxLayout.yCenter())
-    contents.add(splashTexts)
+    contents.add(fullLogo)
     val decoratedBookTableButton = getDecoratedButton("Book A table".toUpperCase(), theme)
     decoratedBookTableButton.uiid = "RedPillButton"
     decoratedBookTableButton.onClick {

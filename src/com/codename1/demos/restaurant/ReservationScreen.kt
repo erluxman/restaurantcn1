@@ -14,12 +14,9 @@ fun showBookScreen(theme: Resources) {
     form.toolbar.hideToolbar()
     form.transitionOutAnimator = CommonTransitions.createFade(800)
 
-    val splashScreenName = Label("Ratatouille".toUpperCase(), "AppTitleLabel")
-    val splashScreenDescription = Label("Cucina Italiana".toUpperCase(), "AppTitleLabelMini")
-    //val orderScreenTitle = Container(BoxLayout.yCenter())
-    //orderScreenTitle.add(splashScreenName).add(splashScreenDescription)
-    val orderScreenTitle = Container(BoxLayout.xCenter()).add(theme.getImage("logofull.png").scaledWidth(850))
-    orderScreenTitle.uiid ="AppFullLogo"
+    val fullLogo = Container(BoxLayout.xCenter()).add(theme.getImage("logofull.png")
+            .scaledWidth(900))
+    fullLogo.uiid ="AppFullLogo"
     val bookATable = Label("Book A Table".toUpperCase(), "PickerTitle")
     val selectDateLabel = Label(" Date & Time".toUpperCase(), "PickerLabel")
     selectDateLabel.addLeadingIcon(FontImage.MATERIAL_CALENDAR_TODAY)
@@ -43,7 +40,7 @@ fun showBookScreen(theme: Resources) {
     pickers.style.setPaddingUnitRight(Style.UNIT_TYPE_SCREEN_PERCENTAGE)
     pickers.style.setPaddingRight(40f)
 
-    contents.add(orderScreenTitle)
+    contents.add(fullLogo)
             .add(bookATable)
             .add(pickers)
 
