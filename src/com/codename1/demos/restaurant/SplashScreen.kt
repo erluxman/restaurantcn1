@@ -5,6 +5,8 @@ import com.codename1.ui.Form
 import com.codename1.ui.animations.CommonTransitions
 import com.codename1.ui.layouts.BorderLayout
 import com.codename1.ui.layouts.BoxLayout
+import com.codename1.ui.layouts.FlowLayout
+import com.codename1.ui.layouts.LayeredLayout
 import com.codename1.ui.util.Resources
 
 fun showSplashScreen(theme: Resources) {
@@ -18,8 +20,7 @@ fun showSplashScreen(theme: Resources) {
     fullLogo.uiid ="AppFullLogo"
     val contents = Container(BoxLayout.yCenter())
     contents.add(fullLogo)
-    val decoratedBookTableButton = getDecoratedButton("Book A table".toUpperCase(), theme)
-    decoratedBookTableButton.uiid = "RedPillButton"
+    var decoratedBookTableButton = getDecoratedButton("Book A table".toUpperCase(), theme)
     decoratedBookTableButton.onClick {
         contents.setShouldCalcPreferredSize(true)
         contents.layout = BoxLayout.y()
@@ -29,10 +30,14 @@ fun showSplashScreen(theme: Resources) {
 
     val wholeScreen = Container(BorderLayout())
     wholeScreen.add(BorderLayout.CENTER, contents)
-    wholeScreen.add(BorderLayout.SOUTH, decoratedBookTableButton)
+    decoratedBookTableButton.uiid = "SplashPillButton"
+    decoratedBookTableButton = Container(BoxLayout.y()).add(decoratedBookTableButton)
+    decoratedBookTableButton = FlowLayout.encloseCenterMiddle(decoratedBookTableButton)
+    decoratedBookTableButton.uiid = "SplashButton"
+    val finalContents = LayeredLayout.encloseIn(wholeScreen,decoratedBookTableButton )
 
     form.add(BorderLayout.NORTH, Container().wrapIntoBorders(theme, bottom = false))
-    form.add(BorderLayout.CENTER, wholeScreen)
+    form.add(BorderLayout.CENTER, finalContents)
     form.add(BorderLayout.SOUTH, Container().wrapIntoBorders(theme, bottom = false))
     form.show()
 }

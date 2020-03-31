@@ -122,6 +122,6 @@ fun Component.asDropDown(theme: Resources): Container {
 
 fun Label.addLeadingIcon(icon: Char) {
     this.icon = FontImage
-            .createMaterial(icon, "WhiteIcon", 4f)
+            .createMaterial(icon, "WhiteIcon", 3f)
             .toImage()
 }

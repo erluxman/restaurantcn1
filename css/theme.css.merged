@@ -264,15 +264,19 @@ NormalWhiteText{
 
 /*Splash Screen*/
 SplashButton {
+        margin-top:40mm;
+}
+
+SplashPillButton {
         background-color: #CB433A;
         background-repeat: space;
         color: white;
-        padding: 2mm;
+        padding: 1mm 5mm;
         text-align: center;
-        border-radius: 50px;
-        margin: 0px 100px 150px 100px;
+        border: 0pt #3399ff cn1-pill-border;
         font-family: var(--styled-text);
 }
+
 
 SplashScreen {
         background-image: url("images/background.png");
@@ -295,7 +299,7 @@ BookScreenContent{
 }
 
 PickerTitle {
-        font-size: 15pt;
+        font-size: 18pt;
         margin-top: 10mm;
         margin-bottom: 5mm;
         text-align: left;
@@ -305,7 +309,7 @@ PickerTitle {
 
 PickerLabel {
         color: white;
-        font-size: 9pt;
+        font-size: 7pt;
         text-align: left;
         font-weight: bold;
         margin: 10px;
@@ -367,7 +371,7 @@ AppTitleLabel {
 }
 
 AppFullLogo {
-        margin-top: 15mm;
+        margin-top: 5mm;
 }
 
 
