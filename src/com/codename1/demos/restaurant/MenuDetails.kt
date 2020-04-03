@@ -15,6 +15,7 @@ fun showMenuDetails(theme: Resources, item: RestaurantMenuItem) {
     form.transitionOutAnimator = CommonTransitions.createFade(800)
     form.uiid = "MenuScreen"
     form.toolbar.hideToolbar()
+    form.isSafeArea = true
     val backButton = Button();
     val backArrowIcon = FontImage
             .createMaterial(FontImage.MATERIAL_ARROW_BACK, "WhiteIcon", 6f)

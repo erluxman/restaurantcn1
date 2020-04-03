@@ -12,6 +12,7 @@ fun showBookScreen(theme: Resources) {
     val form = Form(BorderLayout())
     form.uiid = "BookScreen"
     form.toolbar.hideToolbar()
+    form.isSafeArea = true
     form.transitionOutAnimator = CommonTransitions.createFade(800)
 
     val fullLogo = Container(BoxLayout.xCenter()).add(theme.getImage("logofull.png")

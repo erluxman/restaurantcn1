@@ -35,7 +35,6 @@ open class RestaurantDemo {
             return
         }
         showMenuScreen(theme!!)
-        //showCustomForm()
     }
 
     fun stop() {

@@ -62,7 +62,7 @@ Logo {
 
 /* Toolbar Menu*/
 MenuToolbar {
-        margin-top: 30px;
+        margin-top: 0px;
 }
 
 MenuTitleLabel{
@@ -285,7 +285,7 @@ SplashScreen {
         background-image: url("images/background.png");
         cn1-source-dpi: 0;
         cn1-background-type: cn1-image-scaled-fill;
-        padding-top:100px;
+        padding-top:0px;
 }
 
 /*Reservation Screen*/
@@ -294,7 +294,6 @@ BookScreen {
         background-image: url("images/reservation_bg.png");
         cn1-source-dpi: 450;
         cn1-background-type: cn1-image-scaled-fill;
-        padding-top:100px;
         background-color:black;
 }
 

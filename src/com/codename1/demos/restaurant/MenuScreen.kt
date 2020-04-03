@@ -16,6 +16,7 @@ fun showMenuScreen(theme: Resources) {
     val form = Form(BorderLayout())
     form.uiid = "MenuScreen"
     form.toolbar.hideToolbar()
+    form.isSafeArea = true
     form.transitionOutAnimator = CommonTransitions.createFade(800)
     form.add(NORTH, getToolbar(theme, "Menu").wrapIntoBorders(theme,top = false))
     form.add(CENTER, getMenuContents(theme))
