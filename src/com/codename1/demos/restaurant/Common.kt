@@ -54,7 +54,7 @@ fun getToolbar(theme: Resources, titleString: String): Container {
         actionBar.add(CN.CENTER, titleRow)
         actionBar.add(CN.EAST, Label("            "))
         sheet.add(CN.NORTH, actionBar)
-        sheet.add(CN.CENTER, sheetContents.wrapIntoBorders(theme,top = false))
+        sheet.add(CN.CENTER, sheetContents.wrapIntoBorders(theme, top = false))
         sheet.show()
 
     }
@@ -125,3 +125,19 @@ fun Label.addLeadingIcon(icon: Char) {
             .createMaterial(icon, "WhiteIcon", 3f)
             .toImage()
 }
+
+fun Component.setCommonUIID(uIId: String) {
+    val isTablet = CN.isTablet()
+    if (isTablet) this.uiid = "${uIId}Tab"
+    else this.uiid = uiid
+}
+
+var Component.responsiveUIId: String
+    get() = this.uiid
+    set(value) {
+        val isTablet = CN.isTablet()
+        val postFix = if(isTablet)"Tab" else ""
+        val responseId = value+postFix;
+        print("Response ID = $responseId")
+        this.uiid = responseId
+    }

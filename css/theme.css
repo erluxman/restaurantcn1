@@ -38,6 +38,7 @@ Logo {
         url("images/decorationright.png"),
         url("images/borderline.png"),
         url("images/background.png"),
+        url("images/background_land.png"),
         url("images/coffee.png"),
         url("images/contactus.png"),
         url("images/findus.png"),
@@ -147,6 +148,7 @@ FoodDescription{
         color: #cccccc;
         font-size: 7pt;
         font-family: var(--normal-text);
+        padding-bottom :1mm;
 }
 
 MenuCardPrice{
@@ -287,6 +289,13 @@ SplashScreen {
         cn1-background-type: cn1-image-scaled-fill;
         padding-top:0px;
 }
+SplashScreenTab {
+        background-image: url("images/background_land.png");
+        cn1-source-dpi: 0;
+        cn1-background-type: cn1-image-scaled-fill;
+        padding-top:0px;
+}
+
 
 /*Reservation Screen*/
 

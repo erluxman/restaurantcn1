@@ -11,7 +11,7 @@ import com.codename1.ui.util.Resources
 
 fun showSplashScreen(theme: Resources) {
     val form = Form(BorderLayout())
-    form.uiid = "SplashScreen"
+    form.responsiveUIId = "SplashScreen"
     form.toolbar.hideToolbar()
     form.isSafeArea = true
     form.transitionOutAnimator = CommonTransitions.createFade(800)
