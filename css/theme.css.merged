@@ -319,6 +319,13 @@ BookScreen {
         background-color:black;
 }
 
+BookScreenTab {
+        background-image: url("images/reservation_bg.png");
+        cn1-source-dpi: 450;
+        cn1-background-type: cn1-image-scaled-fill;
+        background-color:black;
+}
+
 BookScreenContent{
 }
 
@@ -415,6 +422,10 @@ AppTitleLabel {
 
 AppFullLogo {
         margin-top: 5mm;
+}
+
+AppFullLogoTab {
+        margin-top: 10mm;
 }
 
 
