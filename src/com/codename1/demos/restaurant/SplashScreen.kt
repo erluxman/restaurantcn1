@@ -18,7 +18,7 @@ fun showSplashScreen(theme: Resources) {
 
     val fullLogo = Container(BoxLayout.xCenter()).add(theme.getImage("logofull.png")
             .mobileWidth(800))
-    fullLogo.uiid ="AppFullLogo"
+    fullLogo.responsiveUIId ="AppFullLogo"
     val contents = Container(BoxLayout.yCenter())
     contents.add(fullLogo)
     var decoratedBookTableButton = getDecoratedButton("Book A table".toUpperCase(), theme)
@@ -31,10 +31,10 @@ fun showSplashScreen(theme: Resources) {
 
     val wholeScreen = Container(BorderLayout())
     wholeScreen.add(BorderLayout.CENTER, contents)
-    decoratedBookTableButton.uiid = "SplashPillButton"
+    decoratedBookTableButton.responsiveUIId = "SplashPillButton"
     decoratedBookTableButton = Container(BoxLayout.y()).add(decoratedBookTableButton)
     decoratedBookTableButton = FlowLayout.encloseCenterMiddle(decoratedBookTableButton)
-    decoratedBookTableButton.uiid = "SplashButton"
+    decoratedBookTableButton.responsiveUIId = "SplashButton"
     val finalContents = LayeredLayout.encloseIn(wholeScreen,decoratedBookTableButton )
 
     val topScreen = Container().wrapIntoBorders(theme, bottom = false)

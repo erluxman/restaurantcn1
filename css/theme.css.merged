@@ -284,6 +284,17 @@ SplashPillButton {
         font-family: var(--styled-text);
 }
 
+SplashPillButtonTab {
+        background-color: #CB433A;
+        background-repeat: space;
+        color: white;
+        padding: 3mm 5mm;
+        text-align: center;
+        margin-top : 80mm;
+        border: 0pt #3399ff cn1-pill-border;
+        font-family: var(--styled-text);
+}
+
 
 SplashScreen {
         background-image: url("images/background.png");
@@ -365,10 +376,29 @@ RedPillButton {
         font-family: var(--styled-text);
 }
 
+RedPillButtonTab {
+        background-color: #CB433A;
+        background-repeat: space;
+        color: white;
+        padding: 1mm;
+        text-align: center;
+        border: 0pt #3399ff cn1-pill-border;
+        margin: 0px 50px 50px 50px;
+        font-family: var(--styled-text);
+}
+
 PillButtonText{
         margin-top: 1mm;
         color: white;
         font-size: 14pt;
+        font-weight: bold;
+        font-family: var(--styled-text);
+}
+
+PillButtonTextTab{
+        margin-top: 1mm;
+        color: white;
+        font-size: 30pt;
         font-weight: bold;
         font-family: var(--styled-text);
 }

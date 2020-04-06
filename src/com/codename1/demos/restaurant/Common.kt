@@ -97,7 +97,7 @@ fun getDecoratedButton(text: String, theme: Resources, textStyle: String = "Pill
     val decRight = ScaleImageLabel(theme.getImage("decorationright.png").scaledHeight(36))
     val decLeft = ScaleImageLabel(theme.getImage("decorationleft.png").scaledHeight(36))
     val bookTableButton = Label(text.toUpperCase())
-    bookTableButton.uiid = textStyle
+    bookTableButton.responsiveUIId = textStyle
     decoratedBookTableButton
             .add(decLeft)
             .add(bookTableButton)
