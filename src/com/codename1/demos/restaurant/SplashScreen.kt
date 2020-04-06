@@ -17,7 +17,7 @@ fun showSplashScreen(theme: Resources) {
     form.transitionOutAnimator = CommonTransitions.createFade(800)
 
     val fullLogo = Container(BoxLayout.xCenter()).add(theme.getImage("logofull.png")
-            .scaledWidth(900))
+            .mobileWidth(800))
     fullLogo.uiid ="AppFullLogo"
     val contents = Container(BoxLayout.yCenter())
     contents.add(fullLogo)

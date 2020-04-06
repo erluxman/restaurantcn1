@@ -2,6 +2,7 @@ package com.codename1.demos.restaurant
 
 import com.codename1.components.ScaleImageLabel
 import com.codename1.ui.*
+import com.codename1.ui.CN.getDisplayHeight
 import com.codename1.ui.CN.getDisplayWidth
 import com.codename1.ui.layouts.BorderLayout
 import com.codename1.ui.layouts.BoxLayout
@@ -126,18 +127,26 @@ fun Label.addLeadingIcon(icon: Char) {
             .toImage()
 }
 
-fun Component.setCommonUIID(uIId: String) {
-    val isTablet = CN.isTablet()
-    if (isTablet) this.uiid = "${uIId}Tab"
-    else this.uiid = uiid
+fun Image.mobileWidth(width: Int): Image? {
+    val standardWidth = 1200.toFloat()
+    val displayWidth = getDisplayWidth().toFloat()
+    val weightedWidth = ((displayWidth/standardWidth)*width.toFloat()).toInt()
+    return this.scaledWidth(weightedWidth)
+}
+
+fun Image.mobileHeight(height: Int): Image? {
+    val standardHeight = 2000.toFloat()
+    val displayHeight = getDisplayHeight().toFloat()
+    val weightedHeight = ((displayHeight/standardHeight)*width.toFloat()).toInt()
+    return this.scaledWidth(weightedHeight)
 }
 
 var Component.responsiveUIId: String
     get() = this.uiid
     set(value) {
         val isTablet = CN.isTablet()
-        val postFix = if(isTablet)"Tab" else ""
-        val responseId = value+postFix;
+        val postFix = if (isTablet) "Tab" else ""
+        val responseId = value + postFix;
         print("Response ID = $responseId")
         this.uiid = responseId
     }
