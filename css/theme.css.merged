@@ -317,6 +317,14 @@ ItemTitle{
         font-family: var(--styled-text);
 }
 
+ItemTitleTab{
+        color: #ff5555;
+        font-size: 36pt;
+        text-align: center;
+        margin-top: 5mm;
+        font-family: var(--styled-text);
+}
+
 ShcheduleRowText{
         color: #cccccc;
         font-size: 8pt;
@@ -325,9 +333,24 @@ ShcheduleRowText{
 
 }
 
+ShcheduleRowTextTab{
+        color: #cccccc;
+        font-size: 16pt;
+        text-align: left;
+        font-family: var(--normal-text);
+
+}
+
 ShcheduleRowDashText{
         color: #cccccc;
         font-size: 8pt;
+        text-align: center;
+        font-family: var(--normal-text);
+}
+
+ShcheduleRowDashTextTab{
+        color: #cccccc;
+        font-size: 16pt;
         text-align: center;
         font-family: var(--normal-text);
 }

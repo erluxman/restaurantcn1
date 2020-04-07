@@ -12,7 +12,7 @@ import com.codename1.ui.util.Resources
 
 fun showContactUsScreen(theme: Resources) {
     val form = Form(BorderLayout())
-    form.uiid = "MenuScreen"
+    form.responsiveUIId = "MenuScreen"
     form.toolbar.hideToolbar()
     form.isSafeArea = true
     form.transitionOutAnimator = CommonTransitions.createFade(800)
@@ -39,23 +39,23 @@ fun getImageContainer(theme: Resources): Container {
 
 fun getSchedule(): Container {
     val container = Container(BoxLayout.y())
-    container.add(Label("Hours".toUpperCase(), "ItemTitle"))
+    container.add(Label("Hours".toUpperCase()).withResponsiveId( "ItemTitle"))
     container.add(getScheduleContent())
     return container
 }
 
 fun getContact(): Container {
     val container = Container(BoxLayout.y())
-    container.add(Label("Email Address".toUpperCase(), "ItemTitle"))
-    container.add(Label("erluxman@gmail.com", "ShcheduleRowDashText"))
+    container.add(Label("Email Address".toUpperCase()).withResponsiveId("ItemTitle"))
+    container.add(Label("erluxman@gmail.com").withResponsiveId("ShcheduleRowDashText"))
 
-    container.add(Label("Address".toUpperCase(), "ItemTitle"))
-    container.add(Label("Ratatouille", "ShcheduleRowDashText"))
-    container.add(Label("55 3rd Street", "ShcheduleRowDashText"))
-    container.add(Label("Ny Ny 6666", "ShcheduleRowDashText"))
+    container.add(Label("Address".toUpperCase()).withResponsiveId( "ItemTitle"))
+    container.add(Label("Ratatouille").withResponsiveId( "ShcheduleRowDashText"))
+    container.add(Label("55 3rd Street").withResponsiveId( "ShcheduleRowDashText"))
+    container.add(Label("Ny Ny 6666").withResponsiveId( "ShcheduleRowDashText"))
 
-    container.add(Label("Phone".toUpperCase(), "ItemTitle"))
-    container.add(Label("+1-800-777-777", "ShcheduleRowDashText"))
+    container.add(Label("Phone".toUpperCase()).withResponsiveId( "ItemTitle"))
+    container.add(Label("+1-800-777-777").withResponsiveId( "ShcheduleRowDashText"))
 
     return container
 }
@@ -63,9 +63,9 @@ fun getContact(): Container {
 fun getScheduleContent(): Container {
     val container = Container(GridLayout(7, 3))
     for (schedule in schedules) {
-        container.add(Label(schedule.day.toUpperCase(), "ShcheduleRowText"))
-        container.add(Label("--------", "ShcheduleRowDashText"))
-        container.add(Label(schedule.schedule, "ShcheduleRowText"))
+        container.add(Label(schedule.day.toUpperCase()).withResponsiveId( "ShcheduleRowText"))
+        container.add(Label("--------").withResponsiveId( "ShcheduleRowDashText"))
+        container.add(Label(schedule.schedule).withResponsiveId( "ShcheduleRowText"))
     }
     return container
 }
