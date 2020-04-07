@@ -10,13 +10,13 @@ import com.codename1.ui.util.Resources
 
 fun showFindUsScreen(theme: Resources) {
     val form = Form(BorderLayout())
-    form.uiid = "MenuScreen"
+    form.responsiveUIId = "MenuScreen"
     form.toolbar.hideToolbar()
     form.isSafeArea = true
     form.transitionOutAnimator = CommonTransitions.createFade(800)
-    form.add(NORTH, getToolbar(theme, "Find Us").wrapIntoBorders(theme,top = false))
+    form.add(NORTH, getToolbar(theme, "Find Us").wrapIntoBorders(theme, top = false))
     form.add(CENTER, getFindUsScreenBody(theme))
-    form.add(SOUTH, getNavigateButton(theme).wrapIntoBorders(theme,top = false))
+    form.add(SOUTH, getNavigateButton(theme).wrapIntoBorders(theme, top = false))
     form.show()
 }
 
@@ -28,7 +28,8 @@ fun getFindUsScreenBody(theme: Resources): Container {
 }
 
 fun getAddressAndPhone(theme: Resources): Container {
-    val fullContents = Container(BoxLayout.x(), "AddressCard")
+    val fullContents = Container(BoxLayout.xCenter())
+    fullContents.responsiveUIId = "AddressCard"
     fullContents.add(getAddressCard(theme)).add(getPhoneCard())
     return fullContents
 }
@@ -38,31 +39,31 @@ private fun getAddressCard(theme: Resources): Container {
 
     val shopIcon = theme.getImage("address.png")
     val address = Container(BoxLayout.y())
-            .add(Label("Ratatouille", "AddressCardText"))
-            .add(Label("55 3rd Street", "AddressCardText"))
-            .add(Label("Ny Ny 6666", "AddressCardText"))
+            .add(Label("Ratatouille").withResponsiveId("AddressCardText"))
+            .add(Label("55 3rd Street").withResponsiveId("AddressCardText"))
+            .add(Label("Ny Ny 6666").withResponsiveId("AddressCardText"))
     container.add(shopIcon).add(address)
     return container
 }
 
 private fun getPhoneCard(): Container {
     val container = Container(BoxLayout.x())
-    container.uiid = "PhoneCard"
+    container.responsiveUIId = "PhoneCard"
     val phoneIcon = FontImage
             .createMaterial(FontImage.MATERIAL_PHONE, "RedIcon", 6f)
             .toImage()
-    container.add(phoneIcon).add(SpanLabel("+1-800-323-3233", "AddressCardText"))
+    container.add(phoneIcon).add(Label("+1-800-323-3233").withResponsiveId("AddressCardText"))
     return container;
 }
 
-fun getMapImage(theme: Resources):Container{
-    val width =Display.getInstance().displayWidth
+fun getMapImage(theme: Resources): Container {
+    val width = Display.getInstance().displayWidth
     return Container().add(theme.getImage("map.png").scaledWidth(width))
 }
 
 fun getNavigateButton(theme: Resources): Container {
     val container = Container(BoxLayout.y())
-    val bookTableButton = getDecoratedButton("Navigate",theme)
-    bookTableButton.uiid ="FindUsPillButton"
+    val bookTableButton = getDecoratedButton("Navigate", theme)
+    bookTableButton.uiid = "FindUsPillButton"
     return container.add(bookTableButton)
 }

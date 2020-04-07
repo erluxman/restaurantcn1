@@ -161,6 +161,10 @@ var Component.responsiveUIId: String
         this.uiid = responseId
     }
 
+fun Component.withResponsiveId(id:String) : Component{
+    this.responsiveUIId = id
+    return this
+}
 
 fun getResponsiveGridLayout(): Layout {
     val isTablet = isTablet();
