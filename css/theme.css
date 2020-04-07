@@ -76,6 +76,15 @@ MenuTitleLabel{
         font-family: var(--styled-text);
 }
 
+MenuTitleLabelTab{
+        color: white;
+        font-size: 20pt;
+        margin-top: 30px;
+        margin-left:30px;
+        text-align: center;
+        font-family: var(--styled-text);
+}
+
 MenuTile {
         margin: 96px;
 }
@@ -125,12 +134,28 @@ MenuCard{
         background-image:url("images/dashbg_landscape.png");
         cn1-background-type: cn1-image-scaled;
 }
+
+MenuCardTab{
+        margin : 40px 200px 50px 30px;
+        padding :10px;
+        background-image:url("images/dashbg_landscape.png");
+        cn1-background-type: cn1-image-scaled;
+}
 MenuCardWhole{
+        padding-top : 50px;
+        padding-bottom : 50px;
+}
+MenuCardWholeTab{
         padding-top : 50px;
         padding-bottom : 50px;
 }
 FoodInfo{
         margin-top: 50px;
+        padding-right: 300px;
+        padding-left: 10px;
+}
+FoodInfoTab{
+        margin-top: 70px;
         padding-right: 300px;
         padding-left: 10px;
 }
@@ -144,10 +169,21 @@ FoodTitle{
         font-family: var(--styled-text);
         font-size: 12pt;
 }
+FoodTitleTab{
+        color: #CB433A;
+        font-family: var(--styled-text);
+        font-size: 22pt;
+}
 
 FoodDescription{
         color: #cccccc;
         font-size: 7pt;
+        font-family: var(--normal-text);
+        padding-bottom :1mm;
+}
+FoodDescriptionTab{
+        color: #cccccc;
+        font-size: 10pt;
         font-family: var(--normal-text);
         padding-bottom :1mm;
 }
@@ -159,6 +195,15 @@ MenuCardPrice{
        background: #0B803B;
        text-align:center;
        padding:1.8mm;
+}
+
+MenuCardPriceTab{
+       background: cn1-round-border;
+       color: white;
+       font-size: 8pt;
+       background: #0B803B;
+       text-align:center;
+       padding:2.2mm;
 }
 /*MenuScreen Ends */
 

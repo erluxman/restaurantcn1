@@ -6,26 +6,28 @@ import com.codename1.ui.CN.*
 import com.codename1.ui.layouts.BorderLayout
 import com.codename1.ui.layouts.BoxLayout
 import com.codename1.ui.layouts.GridLayout
+import com.codename1.ui.layouts.Layout
 import com.codename1.ui.util.Resources
 
 fun getToolbar(theme: Resources, titleString: String): Container {
     val hamburgerIcon = FontImage
-            .createMaterial(FontImage.MATERIAL_MENU, "WhiteIcon", 6f)
+            .createMaterial(FontImage.MATERIAL_MENU, "WhiteIcon", if (isTablet()) 10f else 6f)
             .toImage()
-    val title = Label("   $titleString".toUpperCase(), "MenuTitleLabel")
+    val title = Label("   $titleString".toUpperCase())
+    title.responsiveUIId = "MenuTitleLabel"
     val logo = Container().add(theme.getImage("logo.png").scaledHeight(70))
-    logo.uiid = "LogoIcon"
+    logo.responsiveUIId = "LogoIcon"
     val menu = Button()
     menu.addActionListener {
         val sheet = Sheet(null, "", "Logo")
         sheet.layout = BorderLayout()
-        sheet.uiid = "MenuScreen"
+        sheet.responsiveUIId = "MenuScreen"
         sheet.position = CN.NORTH
         val g = GridLayout(2)
         g.isAutoFit = false
-        val sheetContents = Container(BoxLayout.y())
+        val sheetContents = Container(getResponsiveGridLayout())
         val titleRow = Container(BoxLayout.xCenter())
-        titleRow.uiid = "MenuToolbar"
+        titleRow.responsiveUIId = "MenuToolbar"
         val closeIcon = FontImage
                 .createMaterial(FontImage.MATERIAL_CLOSE, "WhiteIcon", 6f)
                 .toImage()
@@ -71,14 +73,15 @@ fun getMenuItem(title: String, icon: Image, actionListener: (Resources) -> Any, 
         actionListener(theme)
     }
     menu.leadComponent = menuButton
-    val menuTitle = Label(title.toUpperCase(), "MenuTileLabel")
+    val menuTitle = Label(title.toUpperCase())
+    menuTitle.responsiveUIId = "responsiveUIId"
     menu.add(iconButton).add(menuTitle)
     return menu
 }
 
 fun getToolbar(left: Component, center: Component, right: Component): Container {
     val toolbar = Container(BorderLayout())
-    toolbar.uiid = "MenuToolbar"
+    toolbar.responsiveUIId = "MenuToolbar"
     toolbar.add(CN.WEST, left)
     toolbar.add(CN.EAST, right)
     toolbar.add(CN.CENTER, center)
@@ -106,7 +109,7 @@ fun getDecoratedButton(text: String, theme: Resources, textStyle: String = "Pill
 
 
 fun Container.wrapIntoBorders(theme: Resources, top: Boolean = true, bottom: Boolean = true): Container {
-    val imageName = if(isTablet())"borderline_tab.png" else "borderline.png"
+    val imageName = if (isTablet()) "borderline_tab.png" else "borderline.png"
     val newContainer = Container(BoxLayout.y())
     val topBorder = theme.getImage(imageName).scaledWidth(getDisplayWidth())
     val bottomBorder = theme.getImage(imageName).scaledWidth(getDisplayWidth())
@@ -130,23 +133,35 @@ fun Label.addLeadingIcon(icon: Char) {
 fun Image.mobileWidth(width: Int): Image? {
     val standardWidth = 1200.toFloat()
     val displayWidth = getDisplayWidth().toFloat()
-    val weightedWidth = ((displayWidth/standardWidth)*width.toFloat()).toInt()
+    val weightedWidth = ((displayWidth / standardWidth) * width.toFloat()).toInt()
     return this.scaledWidth(weightedWidth)
 }
 
 fun Image.mobileHeight(height: Int): Image? {
     val standardHeight = 2000.toFloat()
     val displayHeight = getDisplayHeight().toFloat()
-    val weightedHeight = ((displayHeight/standardHeight)*width.toFloat()).toInt()
+    val weightedHeight = ((displayHeight / standardHeight) * width.toFloat()).toInt()
     return this.scaledWidth(weightedHeight)
 }
 
 var Component.responsiveUIId: String
     get() = this.uiid
     set(value) {
-        val isTablet = CN.isTablet()
+        val isTablet = isTablet()
+        println("is tablet $isTablet")
         val postFix = if (isTablet) "Tab" else ""
         val responseId = value + postFix;
         print("Response ID = $responseId")
         this.uiid = responseId
     }
+
+
+fun getResponsiveGridLayout(): Layout {
+    val isTablet = isTablet();
+    println("\nIs tablet : $isTablet")
+    val totalGridItems = if (isTablet) 2 else 1
+    val layout = if (totalGridItems > 1) GridLayout(totalGridItems, totalGridItems) else BoxLayout.y()
+    println("Total Grid Items : $totalGridItems")
+    println("Layout : $layout")
+    return layout
+}

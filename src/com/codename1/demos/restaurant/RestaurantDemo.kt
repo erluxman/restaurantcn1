@@ -34,7 +34,7 @@ open class RestaurantDemo {
             current?.show()
             return
         }
-        showBookScreen(theme!!)
+        showMenuScreen(theme!!)
     }
 
     fun stop() {

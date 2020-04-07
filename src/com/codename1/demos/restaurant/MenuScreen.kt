@@ -6,10 +6,7 @@ import com.codename1.ui.Container
 import com.codename1.ui.Form
 import com.codename1.ui.Label
 import com.codename1.ui.animations.CommonTransitions
-import com.codename1.ui.layouts.BorderLayout
-import com.codename1.ui.layouts.BoxLayout
-import com.codename1.ui.layouts.FlowLayout
-import com.codename1.ui.layouts.LayeredLayout
+import com.codename1.ui.layouts.*
 import com.codename1.ui.util.Resources
 
 fun showMenuScreen(theme: Resources) {
@@ -18,40 +15,47 @@ fun showMenuScreen(theme: Resources) {
     form.toolbar.hideToolbar()
     form.isSafeArea = true
     form.transitionOutAnimator = CommonTransitions.createFade(800)
-    form.add(NORTH, getToolbar(theme, "Menu").wrapIntoBorders(theme,top = false))
+    form.add(NORTH, getToolbar(theme, "Menu").wrapIntoBorders(theme, top = false))
     form.add(CENTER, getMenuContents(theme))
     form.show()
 }
 
 fun getMenuContents(res: Resources): Container {
-    val contents = Container(BoxLayout.y())
+     val contents = Container(getResponsiveGridLayout())
     for (menuItem in menuList) {
         val menuRow = getMenuCardNew(menuItem, res)
         contents.addComponent(menuRow)
     }
-    val decoratedContents = contents.wrapIntoBorders(res,top = false)
+    val decoratedContents = contents.wrapIntoBorders(res, top = false)
     decoratedContents.isScrollableY = true
     return decoratedContents
 }
 
 fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
-    val menuCard = Container(BorderLayout(), "MenuCard")
-    val foodInfo = Container(BoxLayout.y(), "FoodInfo")
-    val foodTitle = SpanLabel(menuItem.title.toUpperCase(), "FoodTitle")
-    val foodDescription = SpanLabel(menuItem.description.ellipseString(35), "FoodDescription")
+    val menuCard = Container(BorderLayout())
+    menuCard.responsiveUIId = "MenuCard"
+    val foodInfo = Container(BoxLayout.y())
+    foodInfo.responsiveUIId = "FoodInfo"
+    val foodTitle = SpanLabel(menuItem.title.toUpperCase())
+    foodTitle.textComponent.responsiveUIId ="FoodTitle"
+    val foodDescription = SpanLabel(menuItem.description.ellipseString(35))
+    foodDescription.textComponent.responsiveUIId = "FoodDescription"
     foodInfo.add(foodTitle)
     foodInfo.add(foodDescription)
     menuCard.add(WEST, foodInfo)
 
-    val badgeWrapper = FlowLayout.encloseIn(Label("$10", "MenuCardPrice"))
+    val priceLabel = Label("$10")
+    priceLabel.responsiveUIId = "MenuCardPrice"
+    val badgeWrapper = FlowLayout.encloseIn(priceLabel)
+
 
     val menuCardWhole = LayeredLayout.encloseIn(menuCard, badgeWrapper)
-    menuCardWhole.uiid = "MenuCardWhole"
+    menuCardWhole.responsiveUIId = "MenuCardWhole"
 
     var cardToReturn = menuCardWhole
     if (menuItem.imageName != "") {
         val image = Container().add(res.getImage(menuItem.imageName).scaledHeight(500))
-        image.uiid = "MenuCardImage"
+        image.responsiveUIId = "MenuCardImage"
         cardToReturn = LayeredLayout.encloseIn(menuCardWhole, FlowLayout.encloseRightMiddle(image))
     }
     cardToReturn.onClick {
@@ -71,11 +75,11 @@ val menuList: List<RestaurantMenuItem> = listOf(
         RestaurantMenuItem("Sea Food", "Delicious Fish with Tomato sauce very red hot. This is the best sea food in Nepal I would love to be in this next party lorem ipsum ", "seafood.png"),
         RestaurantMenuItem("Momo", "Delicious Pork Momo with Tomato sauce very red hot", "coffee.png"),
         RestaurantMenuItem("Thakali Food", "Best thakali food in the town", "sausage.png"),
-        RestaurantMenuItem("Sausage", "Chicken sausage, made natually at himalayas' yaks intestine","salad.png")
+        RestaurantMenuItem("Sausage", "Chicken sausage, made natually at himalayas' yaks intestine", "salad.png")
 )
 
 fun String.ellipseString(size: Int): String {
-    val stringToProcess = this+"\n"
+    val stringToProcess = this + "\n"
     if (stringToProcess.length > size) {
         var newString = ""
         newString = stringToProcess.substring(0, size)
