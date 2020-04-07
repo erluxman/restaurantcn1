@@ -20,7 +20,7 @@ fun getToolbar(theme: Resources, titleString: String): Container {
     val menu = Button()
     menu.addActionListener {
         val sheet = Sheet(null, "")
-        sheet.preferredH = 1000
+        //sheet.preferredH = 1000
         sheet.layout = BorderLayout()
         sheet.responsiveUIId = "MenuSheet"
         sheet.position = CN.NORTH
@@ -73,7 +73,10 @@ fun getMenuItem(title: String, icon: Image, actionListener: (Resources) -> Any, 
     menu.responsiveUIId = "MenuTile"
     val iconButton = Button()
     val menuButton = Button()
-    iconButton.icon = icon
+
+    val isTablet = isTablet()
+    val height = if(isTablet) 100 else 60
+    iconButton.icon = icon.scaledHeight(height)
     menuButton.addActionListener {
         actionListener(theme)
     }
@@ -135,18 +138,18 @@ fun Label.addLeadingIcon(icon: Char) {
             .toImage()
 }
 
-fun Image.mobileWidth(width: Int): Image? {
+fun Image.mobileWidth(width: Int): Image {
     val standardWidth = 1200.toFloat()
     val displayWidth = getDisplayWidth().toFloat()
     val weightedWidth = ((displayWidth / standardWidth) * width.toFloat()).toInt()
     return this.scaledWidth(weightedWidth)
 }
 
-fun Image.mobileHeight(height: Int): Image? {
+fun Image.mobileHeight(height: Int): Image {
     val standardHeight = 2000.toFloat()
     val displayHeight = getDisplayHeight().toFloat()
     val weightedHeight = ((displayHeight / standardHeight) * width.toFloat()).toInt()
-    return this.scaledWidth(weightedHeight)
+    return this.scaledHeight(weightedHeight)
 }
 
 var Component.responsiveUIId: String
