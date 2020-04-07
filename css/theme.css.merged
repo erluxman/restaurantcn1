@@ -320,10 +320,10 @@ BookScreen {
 }
 
 BookScreenTab {
-        background-image: url("images/reservation_bg.png");
-        cn1-source-dpi: 450;
+        background-image: url("images/reservation_bg_tab.png");
+        cn1-source-dpi: 0;
         cn1-background-type: cn1-image-scaled-fill;
-        background-color:black;
+        padding-top:0px;
 }
 
 BookScreenContent{
@@ -338,9 +338,33 @@ PickerTitle {
         color: white;
 }
 
+PickerTitleTab {
+        font-size: 35pt;
+        margin-top: 30mm;
+        margin-bottom: 5mm;
+        text-align: left;
+        margin-left:20mm;
+        font-family: var(--styled-text);
+        color: white;
+}
+
+PickersGroup{
+}
+PickersGroupTab{
+        margin-left:20mm;
+}
 PickerLabel {
         color: white;
         font-size: 7pt;
+        text-align: left;
+        font-weight: bold;
+        margin: 10px;
+        margin-top : 5mm;
+}
+
+PickerLabelTab {
+        color: white;
+        font-size: 14pt;
         text-align: left;
         font-weight: bold;
         margin: 10px;
@@ -350,17 +374,30 @@ TextComponent{
         background-color: rgba(0, 0, 0, 0.0);
 }
 
+Picker{
+        background-color: rgba(0, 0, 0, 1.0);
+        color: #aaaaaa;
+}
 TextComponentField{
         color: #aaaaaa;
         font-family: var(--normal-text);
-        font-size: 10pt;
+        font-size: 9pt;
 }
 
 DescriptionLabel{
         color: white;
 }
 
+DescriptionLabelTab{
+        color: white;
+}
+
 DropdownStyle{
+        background-color: #333333;
+        color: white;
+}
+
+DropdownStyleTab{
         background-color: #333333;
         color: white;
 }
