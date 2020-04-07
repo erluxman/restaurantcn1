@@ -71,29 +71,69 @@ MenuToolbar {
 
 MenuTitleLabel{
         color: white;
-        font-size: 14pt;
+        font-size: 10pt;
         margin-top: 30px;
-        margin-left:30px;
         text-align: center;
         font-family: var(--styled-text);
 }
-
 MenuTitleLabelTab{
         color: white;
         font-size: 20pt;
         margin-top: 30px;
-        margin-left:30px;
         text-align: center;
         font-family: var(--styled-text);
 }
 
+MenuPairRight{
+}
+
+MenuPairRightTab{
+        margin-left : 10mm;
+}
+
+MenuPairLeft{
+}
+
+MenuPairLeftTab{
+        margin-right : 10mm;
+}
+
+SheetContents{
+    padding : 4mm;
+}
+
+SheetContentsTab{
+    padding : 10mm;
+}
+
+
+
+MenuSheet{
+        background-color: black;
+        color: black;
+}
+
+MenuSheetTab{
+        background-color: black;
+        color: black;
+}
+
 MenuTile {
-        margin: 96px;
+        margin: 10px;
+}
+
+MenuTileTab {
+        margin: 0px;
 }
 
 MenuTileLabel {
         cn1-derive: MenuTitleLabel;
         font-size: 10pt;
+}
+
+MenuTileLabelTab {
+        cn1-derive: MenuTitleLabel;
+        font-size: 17pt;
 }
 
 FoodMenu {
@@ -126,6 +166,11 @@ WhiteIcon {
 
 /*MenuScreen Starts */
 MenuScreen {
+        background-color: black;
+        color: black;
+}
+
+MenuScreenTab {
         background-color: black;
         color: black;
 }
@@ -182,12 +227,14 @@ FoodDescription{
         font-size: 7pt;
         font-family: var(--normal-text);
         padding-bottom :1mm;
+        padding-top :1mm;
 }
 FoodDescriptionTab{
         color: #cccccc;
         font-size: 10pt;
         font-family: var(--normal-text);
         padding-bottom :1mm;
+        padding-top :1mm;
 }
 
 MenuCardPrice{

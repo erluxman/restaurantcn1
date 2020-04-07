@@ -19,19 +19,20 @@ fun getToolbar(theme: Resources, titleString: String): Container {
     logo.responsiveUIId = "LogoIcon"
     val menu = Button()
     menu.addActionListener {
-        val sheet = Sheet(null, "", "Logo")
+        val sheet = Sheet(null, "")
         sheet.layout = BorderLayout()
-        sheet.responsiveUIId = "MenuScreen"
+        sheet.responsiveUIId = "MenuSheet"
         sheet.position = CN.NORTH
         val g = GridLayout(2)
         g.isAutoFit = false
         val sheetContents = Container(getResponsiveGridLayout())
+        sheetContents.responsiveUIId ="SheetContents"
         val titleRow = Container(BoxLayout.xCenter())
         titleRow.responsiveUIId = "MenuToolbar"
         val closeIcon = FontImage
                 .createMaterial(FontImage.MATERIAL_CLOSE, "WhiteIcon", 6f)
                 .toImage()
-        val titleLogo = theme.getImage("logo.png")
+        val titleLogo = theme.getImage("logo.png").scaledHeight(70)
         val closeButton = Button()
         closeButton.icon = closeIcon
         sheet.hideBackButton()
@@ -40,6 +41,8 @@ fun getToolbar(theme: Resources, titleString: String): Container {
 
         val firstRow = Container(BorderLayout())
         val secondRow = Container(BorderLayout())
+        firstRow.responsiveUIId ="MenuPairLeft"
+        secondRow.responsiveUIId ="MenuPairRight"
         firstRow.add(CN.WEST, getMenuItem("Menu", theme.getImage("foodmenu.png"),
                 ::showMenuScreen, theme))
         firstRow.add(CN.EAST, getMenuItem("Reservation", theme.getImage("reservation.png"),
@@ -65,7 +68,8 @@ fun getToolbar(theme: Resources, titleString: String): Container {
 }
 
 fun getMenuItem(title: String, icon: Image, actionListener: (Resources) -> Any, theme: Resources): Container {
-    val menu = Container(BoxLayout.y(), "MenuTile")
+    val menu = Container(BoxLayout.y())
+    menu.responsiveUIId = "MenuTile"
     val iconButton = Button()
     val menuButton = Button()
     iconButton.icon = icon
@@ -74,7 +78,7 @@ fun getMenuItem(title: String, icon: Image, actionListener: (Resources) -> Any, 
     }
     menu.leadComponent = menuButton
     val menuTitle = Label(title.toUpperCase())
-    menuTitle.responsiveUIId = "responsiveUIId"
+    menuTitle.responsiveUIId = "MenuTileLabel"
     menu.add(iconButton).add(menuTitle)
     return menu
 }
