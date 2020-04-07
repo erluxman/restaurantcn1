@@ -156,20 +156,15 @@ var Component.responsiveUIId: String
     get() = this.uiid
     set(value) {
         val isTablet = isTablet()
-        println("is tablet $isTablet")
         val postFix = if (isTablet) "Tab" else ""
         val responseId = value + postFix;
-        print("Response ID = $responseId")
         this.uiid = responseId
     }
 
 
 fun getResponsiveGridLayout(): Layout {
     val isTablet = isTablet();
-    println("\nIs tablet : $isTablet")
     val totalGridItems = if (isTablet) 2 else 1
     val layout = if (totalGridItems > 1) GridLayout(totalGridItems, totalGridItems) else BoxLayout.y()
-    println("Total Grid Items : $totalGridItems")
-    println("Layout : $layout")
     return layout
 }

@@ -101,7 +101,8 @@ SheetContents{
 }
 
 SheetContentsTab{
-    padding : 1mm;
+    padding-left : 10mm;
+    padding-right : 10mm;
 }
 
 
@@ -231,7 +232,7 @@ FoodDescriptionTab{
         color: #cccccc;
         font-size: 10pt;
         font-family: var(--normal-text);
-        padding-bottom :1mm;
+        padding-bottom :2mm;
         padding-top :1mm;
 }
 
