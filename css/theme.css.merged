@@ -99,11 +99,11 @@ MenuPairLeftTab{
 }
 
 SheetContents{
-    padding : 4mm;
+    padding: 4mm;
 }
 
 SheetContentsTab{
-    padding : 10mm;
+    padding : 1mm;
 }
 
 

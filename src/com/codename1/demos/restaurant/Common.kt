@@ -20,6 +20,7 @@ fun getToolbar(theme: Resources, titleString: String): Container {
     val menu = Button()
     menu.addActionListener {
         val sheet = Sheet(null, "")
+        sheet.preferredH = 1000
         sheet.layout = BorderLayout()
         sheet.responsiveUIId = "MenuSheet"
         sheet.position = CN.NORTH
