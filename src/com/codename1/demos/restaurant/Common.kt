@@ -2,8 +2,7 @@ package com.codename1.demos.restaurant
 
 import com.codename1.components.ScaleImageLabel
 import com.codename1.ui.*
-import com.codename1.ui.CN.getDisplayHeight
-import com.codename1.ui.CN.getDisplayWidth
+import com.codename1.ui.CN.*
 import com.codename1.ui.layouts.BorderLayout
 import com.codename1.ui.layouts.BoxLayout
 import com.codename1.ui.layouts.GridLayout
@@ -107,9 +106,10 @@ fun getDecoratedButton(text: String, theme: Resources, textStyle: String = "Pill
 
 
 fun Container.wrapIntoBorders(theme: Resources, top: Boolean = true, bottom: Boolean = true): Container {
+    val imageName = if(isTablet())"borderline_tab.png" else "borderline.png"
     val newContainer = Container(BoxLayout.y())
-    val topBorder = theme.getImage("borderline.png").scaledWidth(getDisplayWidth())
-    val bottomBorder = theme.getImage("borderline.png").scaledWidth(getDisplayWidth())
+    val topBorder = theme.getImage(imageName).scaledWidth(getDisplayWidth())
+    val bottomBorder = theme.getImage(imageName).scaledWidth(getDisplayWidth())
     if (top) newContainer.add(topBorder)
     newContainer.add(this)
     if (bottom) newContainer.add(bottomBorder)
