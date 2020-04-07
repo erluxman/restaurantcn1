@@ -350,10 +350,13 @@ PickerTitleTab {
 }
 
 PickersGroup{
+
 }
+
 PickersGroupTab{
         margin-left:20mm;
 }
+
 PickerLabel {
         color: white;
         font-size: 7pt;
@@ -404,11 +407,21 @@ DropdownStyleTab{
 }
 
 BookScreenGoBack {
-        color: white;
+        color: #aaaaaa;
         text-align: center;
         font-size:10pt;
         font-family: var(--styled-text);
 }
+
+BookScreenGoBackTab {
+        color: #aaaaaa;
+        text-align: center;
+        margin-top: 5mm;
+        font-size:20pt;
+        font-family: var(--styled-text);
+        margin-bottom: 20mm;
+}
+
 /*Shared Styles*/
 RedPillButton {
         background-color: #CB433A;
@@ -441,7 +454,7 @@ PillButtonText{
 }
 
 PillButtonTextTab{
-        margin-top: 1mm;
+        margin-top: 3mm;
         color: white;
         font-size: 30pt;
         font-weight: bold;
