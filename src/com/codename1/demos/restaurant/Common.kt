@@ -15,7 +15,7 @@ fun getToolbar(theme: Resources, titleString: String): Container {
             .toImage()
     val title = Label("   $titleString".toUpperCase())
     title.responsiveUIId = "MenuTitleLabel"
-    val logo = Container().add(theme.getImage("logo.png").scaledHeight(70))
+    val logo = Container().add(theme.getImage("logo.png").mobileWidth(200))
     logo.responsiveUIId = "LogoIcon"
     val menu = Button()
     menu.addActionListener {
@@ -33,7 +33,7 @@ fun getToolbar(theme: Resources, titleString: String): Container {
         val closeIcon = FontImage
                 .createMaterial(FontImage.MATERIAL_CLOSE, "WhiteIcon", 6f)
                 .toImage()
-        val titleLogo = theme.getImage("logo.png").scaledHeight(70)
+        val titleLogo = theme.getImage("logo.png").mobileWidth(250)
         val closeButton = Button()
         closeButton.icon = closeIcon
         sheet.hideBackButton()
@@ -88,7 +88,7 @@ fun getMenuItem(title: String, icon: Image, actionListener: (Resources) -> Any, 
 }
 
 fun getToolbar(left: Component, center: Component, right: Component): Container {
-    val toolbar = Container(BorderLayout())
+    val toolbar = Container(BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER))
     toolbar.responsiveUIId = "MenuToolbar"
     toolbar.add(CN.WEST, left)
     toolbar.add(CN.EAST, right)

@@ -39,9 +39,13 @@ fun showMenuDetails(theme: Resources, item: RestaurantMenuItem) {
     }
     itemDetailsInfo.add(SOUTH, goBackButton)
     if (item.imageName != "") {
-        val image = Container().add(theme.getImage(item.imageName).scaledWidth(550))
-        image.responsiveUIId = "MenuCardImage"
-        itemDetailsInfo = LayeredLayout.encloseIn(itemDetailsInfo, FlowLayout.encloseCenter(image))
+        var image = theme.getImage(item.imageName);
+        image = image.mobileWidth(450)
+        val imageContainer = Container().add(image)
+        imageContainer.responsiveUIId = "MenuCardImage"
+        itemDetailsInfo = LayeredLayout.encloseIn(
+                itemDetailsInfo,
+                FlowLayout.encloseCenter(imageContainer))
     }
     form.add(CENTER, itemDetailsInfo.wrapIntoBorders(theme, bottom = false))
     form.add(SOUTH, Container().wrapIntoBorders(theme, top = false))
@@ -58,7 +62,7 @@ fun getMenuDetails(theme: Resources, item: RestaurantMenuItem): Container {
     priceRowContent.add(CENTER, Label("$5").withResponsiveId("ItemPrice"))
     priceRowContent.add(EAST, getGreenLine())
     priceRowContent.add(WEST, getGreenLine())
-    priceRowContent.responsiveUIId ="PriceRowContent"
+    priceRowContent.responsiveUIId = "PriceRowContent"
     priceRow.add(priceRowContent)
     dashboarderContainer.add(priceRow)
     val title = SpanLabel(item.title.toUpperCase())

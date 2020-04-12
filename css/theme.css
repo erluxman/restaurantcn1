@@ -69,15 +69,17 @@ MenuToolbar {
 
 MenuTitleLabel{
         color: white;
-        font-size: 10pt;
-        margin-top: 30px;
+        font-size: 5mm;
+        margin-left: 5mm;
+        margin-top: 1mm;
         text-align: center;
         font-family: var(--styled-text);
 }
 MenuTitleLabelTab{
         color: white;
-        font-size: 30pt;
-        margin-top: 30px;
+        font-size: 12mm;
+        margin-top: 2mm;
+        margin-left: 30mm;
         text-align: center;
         font-family: var(--styled-text);
 }
@@ -154,7 +156,11 @@ Reservation {
 }
 
 LogoIcon{
-        margin-top: 30px;
+        margin-top: 0px;
+}
+
+LogoIconTablet{
+        margin-top: 40px;
 }
 
 WhiteIcon {
@@ -194,18 +200,22 @@ MenuCardWholeTab{
         padding-bottom : 50px;
 }
 FoodInfo{
-        margin-top: 50px;
+        margin-top: 4mm;
         padding-right: 300px;
-        padding-left: 10px;
+        padding-left: 2mm;
 }
 FoodInfoTab{
-        margin-top: 70px;
-        padding-right: 300px;
-        padding-left: 10px;
+        margin-top: 4mm;
+        padding-right: 20mm;
+        padding-left: 2mm;
 }
 
 MenuCardImage{
         margin-right: 0px;
+}
+MenuCardImageTab{
+        margin: 0mm;
+        padding:0mm;
 }
 
 FoodTitle{
@@ -234,6 +244,14 @@ FoodDescriptionTab{
         padding-top :1mm;
 }
 
+FoodDescriptionSpan{
+
+}
+
+FoodDescriptionSpanTab{
+    padding-bottom: 0mm;
+    margin-bottom: 0mm;
+}
 MenuCardPrice{
        background: cn1-round-border;
        color: white;
@@ -326,11 +344,11 @@ ItemDetailsInfo{
         cn1-background-type: cn1-image-scaled;
         padding-top: 20mm;
         margin :1mm;
-        margin-top: 18mm;
+        margin-top: 15mm;
 }
 
 ItemDetailsInfoTab{
-        padding: 20mm;
+        padding: 10mm;
         background-image: url("images/dashbg_landscape.png");
         border-image-slice: 10% 10%;
         cn1-background-type: cn1-image-scaled;

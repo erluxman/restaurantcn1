@@ -26,9 +26,9 @@ fun getMenuContents(res: Resources): Container {
         val menuRow = getMenuCardNew(menuItem, res)
         contents.addComponent(menuRow)
     }
-    val decoratedContents = contents.wrapIntoBorders(res, top = false)
-    decoratedContents.isScrollableY = true
-    return decoratedContents
+    //val decoratedContents = contents.wrapIntoBorders(res, top = false)
+    contents.isScrollableY = true
+    return contents
 }
 
 fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
@@ -54,7 +54,8 @@ fun getMenuCardNew(menuItem: RestaurantMenuItem, res: Resources): Container {
 
     var cardToReturn = menuCardWhole
     if (menuItem.imageName != "") {
-        val image = Container().add(res.getImage(menuItem.imageName).scaledHeight(500))
+        val mobileWidth = if(isTablet()) 250 else 500
+        val image = Container().add(res.getImage(menuItem.imageName).mobileWidth(mobileWidth))
         image.responsiveUIId = "MenuCardImage"
         cardToReturn = LayeredLayout.encloseIn(menuCardWhole, FlowLayout.encloseRightMiddle(image))
     }
