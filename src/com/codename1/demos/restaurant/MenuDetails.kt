@@ -58,6 +58,7 @@ fun getMenuDetails(theme: Resources, item: RestaurantMenuItem): Container {
     priceRowContent.add(CENTER, Label("$5").withResponsiveId("ItemPrice"))
     priceRowContent.add(EAST, getGreenLine())
     priceRowContent.add(WEST, getGreenLine())
+    priceRowContent.responsiveUIId ="PriceRowContent"
     priceRow.add(priceRowContent)
     dashboarderContainer.add(priceRow)
     val title = SpanLabel(item.title.toUpperCase())

@@ -27,7 +27,7 @@ fun getToolbar(theme: Resources, titleString: String): Container {
         val g = GridLayout(2)
         g.isAutoFit = false
         val sheetContents = Container(getResponsiveGridLayout())
-        sheetContents.responsiveUIId ="SheetContents"
+        sheetContents.responsiveUIId = "SheetContents"
         val titleRow = Container(BoxLayout.xCenter())
         titleRow.responsiveUIId = "MenuToolbar"
         val closeIcon = FontImage
@@ -42,8 +42,8 @@ fun getToolbar(theme: Resources, titleString: String): Container {
 
         val firstRow = Container(BorderLayout())
         val secondRow = Container(BorderLayout())
-        firstRow.responsiveUIId ="MenuPairLeft"
-        secondRow.responsiveUIId ="MenuPairRight"
+        firstRow.responsiveUIId = "MenuPairLeft"
+        secondRow.responsiveUIId = "MenuPairRight"
         firstRow.add(CN.WEST, getMenuItem("Menu", theme.getImage("foodmenu.png"),
                 ::showMenuScreen, theme))
         firstRow.add(CN.EAST, getMenuItem("Reservation", theme.getImage("reservation.png"),
@@ -75,7 +75,7 @@ fun getMenuItem(title: String, icon: Image, actionListener: (Resources) -> Any, 
     val menuButton = Button()
 
     val isTablet = isTablet()
-    val height = if(isTablet) 100 else 60
+    val height = if (isTablet) 100 else 60
     iconButton.icon = icon.scaledHeight(height)
     menuButton.addActionListener {
         actionListener(theme)
@@ -118,7 +118,10 @@ fun getDecoratedButton(text: String, theme: Resources, textStyle: String = "Pill
 
 fun Container.wrapIntoBorders(theme: Resources, top: Boolean = true, bottom: Boolean = true): Container {
     val imageName = if (isTablet()) "borderline_tab.png" else "borderline.png"
-    val newContainer = Container(BoxLayout.y())
+    val layout = BoxLayout(BoxLayout.Y_AXIS)
+    //layout.align = Component.BOTTOM
+
+    val newContainer = Container(layout)
     val topBorder = theme.getImage(imageName).scaledWidth(getDisplayWidth())
     val bottomBorder = theme.getImage(imageName).scaledWidth(getDisplayWidth())
     if (top) newContainer.add(topBorder)
@@ -161,7 +164,7 @@ var Component.responsiveUIId: String
         this.uiid = responseId
     }
 
-fun Component.withResponsiveId(id:String) : Component{
+fun Component.withResponsiveId(id: String): Component {
     this.responsiveUIId = id
     return this
 }

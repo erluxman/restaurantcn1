@@ -273,14 +273,14 @@ FoodDetailsTitleTab{
 
 FoodDetailsDescription{
         color: white;
-        font-size: 10pt;
+        font-size: 8pt;
         font-family: var(--normal-text);
         text-align: center;
 }
 
 FoodDetailsDescriptionTab{
         color: white;
-        font-size: 16pt;
+        font-size: 20pt;
         font-family: var(--normal-text);
         text-align: center;
 }
@@ -313,26 +313,32 @@ ItemPriceTab{
        text-align:center;
        padding:2mm;
 }
+PriceRowContent{
+        margin-top: 2mm;
+}
 
+PriceRowContentTab{
+        margin-top: 12mm;
+}
 
 ItemDetailsInfo{
         padding: 2mm;
         background-image:url("images/dashbg_landscape.png");
+        border-image-slice: 10% 10%;
         cn1-background-type: cn1-image-scaled;
-        cn1-9patch: 5px 8px 4px 10px;
         padding-top: 20mm;
-        margin :20px;
-        margin-top: 15mm;
+        margin :1mm;
+        margin-top: 18mm;
 }
 
 ItemDetailsInfoTab{
-        padding: 2mm;
-        background-image:url("images/dashbg_landscape.png");
+        padding: 20mm;
+        background-image: url("images/dashbg_landscape.png");
+        border-image-slice: 10% 10%;
         cn1-background-type: cn1-image-scaled;
-        cn1-9patch: 5px 8px 4px 10px;
         padding-top: 20mm;
-        margin :20px;
-        margin-top: 15mm;
+        margin : 20mm;
+        margin-top: 30mm;
 }
 
 RedPillButtonFoodDetails {

@@ -60,7 +60,7 @@ fun showBookScreen(theme: Resources) {
     //pickers.layout = if(isTablet()) GridLayout(2) else BoxLayout.y()
 
     pickers.style.setPaddingUnitRight(Style.UNIT_TYPE_SCREEN_PERCENTAGE)
-    pickers.style.setPaddingRight(40f)
+    pickers.style.setPaddingRight(if(isTablet)100f else 40f)
 
     contents.add(fullLogo)
             .add(bookATable)
